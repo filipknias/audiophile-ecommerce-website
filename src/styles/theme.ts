@@ -6,6 +6,11 @@ export const theme: DefaultTheme = {
     white: '#fff',
     black: '#191919',
   },
+  fonts: {
+    light: '300',
+    normal: '400',
+    bold: '700',
+  },
   palette: {
     orange: '#d87d4a',
     gray: '#f1f1f1',

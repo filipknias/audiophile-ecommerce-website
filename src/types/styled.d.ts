@@ -7,6 +7,11 @@ declare module 'styled-components' {
       white: string;
       black: string;
     },
+    fonts: {
+      light: string;
+      normal: string;
+      bold: string;
+    },
     palette: {
       orange: string;
       gray: string;
