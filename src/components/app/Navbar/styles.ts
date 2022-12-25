@@ -5,8 +5,6 @@ interface NavLinkProps {
 }
 
 export const Nav = styled.nav`
-  width: 60%;
-  margin: 0 auto;
   padding: 30px 0px;
   display: flex;
   align-items: center;

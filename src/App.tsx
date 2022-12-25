@@ -1,5 +1,6 @@
 import { Navbar } from "components/app/Navbar/Navbar";
 import styled from "styled-components";
+import { Container } from "components/common/Container";
 
 const HeaderSection = styled.div`
   width: 100%;
@@ -9,7 +10,9 @@ const HeaderSection = styled.div`
 export default (): JSX.Element => {
   return (
     <HeaderSection>
-      <Navbar />
+      <Container>
+        <Navbar />
+      </Container>
     </HeaderSection>
   )
 }
