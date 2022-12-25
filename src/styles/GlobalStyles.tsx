@@ -9,4 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'Lato', sans-serif;
   }
+
+  body {
+    background-color: ${({ theme }) => theme.background.light};
+  }
 `;
