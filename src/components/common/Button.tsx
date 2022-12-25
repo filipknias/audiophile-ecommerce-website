@@ -14,6 +14,7 @@ const Button = styled.button<ButtonProps>`
   font-weight: ${({ theme }) => theme.fonts.bold};
   cursor: pointer;
   transition: 0.1s ease-in;
+  border: none;
 `;
 
 export const OrangeButton = styled(Button)`
