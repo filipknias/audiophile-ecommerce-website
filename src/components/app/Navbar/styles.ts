@@ -4,6 +4,11 @@ interface NavLinkProps {
   active: boolean;
 }
 
+export const Background = styled.div`
+  width: 100%;
+  background-color: ${({ theme }) => theme.background.dark};
+`;
+
 export const Nav = styled.nav`
   padding: 30px 0px;
   display: flex;
