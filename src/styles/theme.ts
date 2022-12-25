@@ -2,7 +2,7 @@ import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
   text: {
-    light: 'rgba(0,0,0,0.5)',
+    light: 'rgba(255,255,255,0.5)',
     white: '#fff',
     black: '#191919',
   },
