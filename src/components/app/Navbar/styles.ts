@@ -36,4 +36,5 @@ export const NavLink = styled.li<NavLinkProps>`
 
 export const Cart = styled.img`
   cursor: pointer;
+  height: 25px;
 `;
