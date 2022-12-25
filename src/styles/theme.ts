@@ -14,6 +14,7 @@ export const theme: DefaultTheme = {
   palette: {
     orange: '#d87d4a',
     gray: '#f1f1f1',
+    black: "#000",
   },
   background: {
     light: '#fafafa',
