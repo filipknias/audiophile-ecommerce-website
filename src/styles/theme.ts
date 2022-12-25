@@ -8,7 +8,7 @@ export const theme: DefaultTheme = {
   },
   fonts: {
     light: '300',
-    normal: '400',
+    normal: '500',
     bold: '700',
   },
   palette: {
