@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+const fadeInDelay = '2s';
+
 export const Wrapper = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.background.dark};
@@ -16,11 +18,21 @@ export const HeroImage = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  animation: fadeIn ${fadeInDelay} ease-in;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
     background-image: url('/src/assets/images/home/tablet/image-hero.jpg');
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     background-image: url('/src/assets/images/home/mobile/image-hero.jpg');
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 `;
 
