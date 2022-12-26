@@ -13,7 +13,7 @@ export const Navbar = (): JSX.Element => {
         <Nav>
           <BrandGroup>
             <HamburgerMenu src={HamburgerIcon} />
-            <Brand>audiophile</Brand>
+            <Brand role="brand">audiophile</Brand>
           </BrandGroup>
           <NavLinks>
             {navItems.map((item) => 
