@@ -1,6 +1,5 @@
 import { Wrapper, HeroImage, NewProductText, Description, Title, HeroContent } from './styles';
-import { Container } from 'components/common/Container';
-import { OrangeButton } from 'components/common/Button';
+import { OrangeButton, Container } from 'components/common';
 
 export const Hero = (): JSX.Element => {
   return (

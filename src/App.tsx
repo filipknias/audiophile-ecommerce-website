@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { Navbar } from "components/app/Navbar/Navbar";
-import { Home } from "pages/Home";
+import { Navbar } from "components/app";
+import { Home } from "pages";
 
 export default (): JSX.Element => {
   return (

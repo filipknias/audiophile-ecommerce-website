@@ -1,5 +1,5 @@
 import { HamburgerMenu, BrandGroup, Brand, Nav, NavLink, NavLinks, Cart, Background } from './styles';
-import { Container } from 'components/common/Container';
+import { Container } from 'components/common';
 import CartIcon from 'assets/icon-cart.svg';
 import HamburgerIcon from 'assets/images/shared/tablet/icon-hamburger.svg';
 
