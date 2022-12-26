@@ -7,22 +7,38 @@ export const Wrapper = styled.div`
 
 export const HeroImage = styled.div`
   border-top: 2px solid rgba(255,255,255,0.1);
-  background: url('/src/assets/images/home/desktop/image-hero.jpg');
+  background-image: url('/src/assets/images/home/desktop/image-hero.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 729px;
+  height: 600px;
   width: 100%;
   display: flex;
   align-items: center;
   gap: 20px;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    background-image: url('/src/assets/images/home/tablet/image-hero.jpg');
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    background-image: url('/src/assets/images/home/mobile/image-hero.jpg');
+  }
 `;
 
 export const HeroContent = styled.div`
   width: 35%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 100%;
+  }
 `;
 
 export const NewProductText = styled.span`

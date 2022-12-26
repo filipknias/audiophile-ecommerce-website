@@ -29,6 +29,9 @@ export const NavLinks = styled.ul`
   display: flex;
   align-items: center;
   gap: 35px;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    display: none;
+  }
 `;
 
 export const NavLink = styled.li<NavLinkProps>`
@@ -42,4 +45,18 @@ export const NavLink = styled.li<NavLinkProps>`
 export const Cart = styled.img`
   cursor: pointer;
   height: 25px;
+`;
+
+export const HamburgerMenu = styled.img`
+  cursor: pointer;
+  height: 20px;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    display: none;
+  }
+`;
+
+export const BrandGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 40px;
 `;
