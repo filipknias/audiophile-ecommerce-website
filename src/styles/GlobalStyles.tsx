@@ -13,4 +13,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.background.light};
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
