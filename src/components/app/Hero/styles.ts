@@ -65,6 +65,9 @@ export const Title = styled.h1`
   font-weight: ${({ theme }) => theme.fonts.bold};
   font-size: 60px;
   color: ${({ theme }) => theme.text.white};
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    font-size: 40px;
+  }
 `;
 
 export const Description = styled.p`
