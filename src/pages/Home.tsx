@@ -1,9 +1,32 @@
-import { Hero } from "components/app/Hero/Hero";
+import styled from "styled-components";
+import { Hero, CategoryCard } from "components/app";
+import { Container } from "components/common";
+import HeadphonesImage from 'assets/images/shared/desktop/image-headphones.png';
+import SpeakersImage from 'assets/images/shared/desktop/image-speakers.png';
+import EarphonesImage from 'assets/images/shared/desktop/image-earphones.png';
+
+const CategoriesGroup = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  margin: 150px 0;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    gap: 120px;
+    flex-direction: column;
+  }
+`;
 
 export const Home = (): JSX.Element => {
   return (
-    <div>
+    <>
       <Hero />
-    </div>
+      <Container>
+        <CategoriesGroup>
+          <CategoryCard image={HeadphonesImage} title="Headphones" href="/headphones" />
+          <CategoryCard image={SpeakersImage} title="Speakers" href="/speakers" />
+          <CategoryCard image={EarphonesImage} title="Earphones" href="/earphones" />
+        </CategoriesGroup>
+      </Container>
+    </>
   )
 }
