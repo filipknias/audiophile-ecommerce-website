@@ -20,6 +20,11 @@ declare module 'styled-components' {
     background: {
       light: string;
       dark: string;
+    },
+    breakpoints: {
+      lg: string;
+      md: string;
+      sm: string;
     }
   }
 }

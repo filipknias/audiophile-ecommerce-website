@@ -19,5 +19,10 @@ export const theme: DefaultTheme = {
   background: {
     light: '#fafafa',
     dark: '#191919',
+  },
+  breakpoints: {
+    lg: '1400px',
+    md: '1200px',
+    sm: '1000px',
   }
 }
