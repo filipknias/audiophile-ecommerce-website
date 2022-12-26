@@ -5,6 +5,7 @@ export const theme: DefaultTheme = {
     light: 'rgba(255,255,255,0.5)',
     white: '#fff',
     black: '#191919',
+    dark: 'rgba(0,0,0,0.5)',
   },
   fonts: {
     light: '300',
