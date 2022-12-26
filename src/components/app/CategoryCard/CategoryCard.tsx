@@ -10,10 +10,10 @@ interface Props {
 
 export const CategoryCard = ({ image, title, href }: Props): JSX.Element => {
   return (
-    <Link to={href} style={{ width: '100%' }}>
+    <Link to={href} style={{ width: '100%' }} role="category-link">
       <Card>
-        <Image src={image} alt={`${title}-image`} />
-        <Title>{title}</Title>
+        <Image src={image} alt={`${title}-image`} role="category-image" />
+        <Title role="category-title">{title}</Title>
         <LinkGroup>
           <CardLink>Shop</CardLink>
           <img src={ArrowRight} alt="arrow-right" />

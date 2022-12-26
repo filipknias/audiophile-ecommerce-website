@@ -2,6 +2,7 @@ import { theme as defaultTheme } from "styles/theme";
 import { ThemeProvider, DefaultTheme } from "styled-components";
 import { render as rtlRender, RenderOptions } from '@testing-library/react';
 import { ReactElement, ComponentType } from "react";
+import { BrowserRouter } from "react-router-dom";
 
 interface CustomOptions extends RenderOptions {
   theme: DefaultTheme;
@@ -14,9 +15,11 @@ interface WrapperProps {
 const customRender = (ui: ReactElement, options?: CustomOptions) => {
   const Wrapper = ({ children }: WrapperProps) => {
     return (
-      <ThemeProvider theme={options?.theme || defaultTheme}>
-        {children}
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={options?.theme || defaultTheme}>
+          {children}
+        </ThemeProvider>
+      </BrowserRouter>
     )
   }
 
