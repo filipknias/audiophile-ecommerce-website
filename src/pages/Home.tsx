@@ -9,7 +9,8 @@ const CategoriesGroup = styled.div`
   width: 100%;
   display: flex;
   gap: 40px;
-  margin: 150px 0;
+  margin-top: 12.5rem;
+  margin-bottom: 7.5rem;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     gap: 120px;
     flex-direction: column;
