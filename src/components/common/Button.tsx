@@ -34,11 +34,10 @@ export const BlackButton = styled(Button)`
 `;
 
 export const OutlinedButton = styled(Button)`
-  background-color: none;
-  color: ${({ theme }) => theme.text.white};
+  background: unset; 
+  color: ${({ theme }) => theme.text.black};
   border: 1px solid ${({ theme }) => theme.text.black};
   &:hover {
-    border: none;
     background-color: ${({ theme }) => theme.palette.black};
     color: ${({ theme }) => theme.text.white};
   }
