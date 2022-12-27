@@ -1,6 +1,7 @@
 import { DefaultTheme } from 'styled-components';
 
 export const theme: DefaultTheme = {
+  borderRadius: '0.5rem',
   text: {
     light: 'rgba(255,255,255,0.5)',
     white: '#fff',
