@@ -4,7 +4,7 @@ import { Container } from "components/common";
 import HeadphonesImage from 'assets/images/shared/desktop/image-headphones.png';
 import SpeakersImage from 'assets/images/shared/desktop/image-speakers.png';
 import EarphonesImage from 'assets/images/shared/desktop/image-earphones.png';
-import { ZX9Speaker } from "components/products";
+import { ZX9Speaker, ZX7Speaker } from "components/products";
 
 const CategoriesGroup = styled.div`
   width: 100%;
@@ -23,6 +23,7 @@ const ProductsGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 60px;
+  margin-bottom: 100px;
 `;
 
 export const Home = (): JSX.Element => {
@@ -37,6 +38,7 @@ export const Home = (): JSX.Element => {
         </CategoriesGroup>
         <ProductsGroup>
           <ZX9Speaker />
+          <ZX7Speaker />
         </ProductsGroup>
       </Container>
     </>
