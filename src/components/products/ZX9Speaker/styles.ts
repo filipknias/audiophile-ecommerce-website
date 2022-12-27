@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   display: flex;
   height: 600px;
   border-radius: ${({ theme }) => theme.borderRadius};
-  margin-bottom: 100px;
   overflow: hidden;
   padding: 0 20px;
   gap: 60px;

@@ -19,6 +19,12 @@ const CategoriesGroup = styled.div`
   }
 `;
 
+const ProductsGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+`;
+
 export const Home = (): JSX.Element => {
   return (
     <>
@@ -29,7 +35,9 @@ export const Home = (): JSX.Element => {
           <CategoryCard image={SpeakersImage} title="Speakers" href="/speakers" />
           <CategoryCard image={EarphonesImage} title="Earphones" href="/earphones" />
         </CategoriesGroup>
-        <ZX9Speaker />
+        <ProductsGroup>
+          <ZX9Speaker />
+        </ProductsGroup>
       </Container>
     </>
   )
