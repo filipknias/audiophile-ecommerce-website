@@ -26,5 +26,6 @@ export const theme: DefaultTheme = {
     lg: '1400px',
     md: '1200px',
     sm: '1000px',
+    xs: '600px',
   }
 }
