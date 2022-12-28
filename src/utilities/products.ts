@@ -11,3 +11,7 @@ export const getProductById = (id: number) => {
 export const getProductBySlug = (slug: string) => {
   return productsData.products.filter((product) => product.slug === slug);
 }
+
+export const getProductByCategory = (category: string) => {
+  return productsData.products.filter((product) => product.category === category);
+}
