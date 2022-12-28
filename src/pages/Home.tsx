@@ -15,7 +15,9 @@ export const Home = (): JSX.Element => {
     <>
       <ProductHero />
       <Container>
-        <CategoriesCardsList />
+        <div style={{ margin: '7.5rem 0' }}>
+          <CategoriesCardsList />
+        </div>
         <ProductsGroup>
           <FadeInOnScroll>
             <ZX9Speaker />

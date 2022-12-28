@@ -73,4 +73,10 @@ export const Description = styled.p`
   color: ${({ theme }) => theme.text.dark};
   font-size: 1rem;  
   line-height: 1.6;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 70%;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.xs}) {
+    width: 100%;
+  }
 `;
