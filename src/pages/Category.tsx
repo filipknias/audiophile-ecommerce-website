@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import { Container, Hero } from "components/common";
 import { ProductCard } from "components/products";
 import styled from "styled-components";
-import { CategoriesCardsList } from "components/app";
+import { CategoriesCardsList, BrandStory } from "components/app";
 
 const Stack = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 7.5rem;
+  gap: 5rem;
   margin: 50px 0;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     gap: 2rem;
@@ -28,6 +28,7 @@ export const Category = (): JSX.Element => {
             <ProductCard key={product.id} product={product} />
           ))}
           <CategoriesCardsList />
+          <BrandStory />
         </Stack>
       </Container>
     </>
