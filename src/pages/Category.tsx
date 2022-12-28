@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Container, Hero } from "components/common";
 import { ProductCard } from "components/products";
 import styled from "styled-components";
+import { CategoriesCardsList } from "components/app";
 
 const Stack = styled.div`
   display: flex;
@@ -26,6 +27,7 @@ export const Category = (): JSX.Element => {
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
+          <CategoriesCardsList />
         </Stack>
       </Container>
     </>
