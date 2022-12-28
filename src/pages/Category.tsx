@@ -10,9 +10,6 @@ const Stack = styled.div`
   flex-direction: column;
   gap: 5rem;
   margin: 50px 0;
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    gap: 2rem;
-  }
 `;
 
 export const Category = (): JSX.Element => {

@@ -9,14 +9,18 @@ export const Wrapper = styled.div`
   display: flex;
   height: 500px;
   gap: 30px;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    &:nth-child(even) {
-      flex-flow: row-reverse;
-    }
+  &:nth-child(even) {
+    flex-flow: row-reverse;
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    height: 300px;
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     flex-direction: column;
-    height: 700px;
+    height: 500px;
+    &:nth-child(even) {
+      flex-flow: column;
+    }
   }
 `;
 
@@ -26,12 +30,13 @@ export const ProductImage = styled.div<ProductImageProps>`
   background-image: url(${({ image }) => "/src/assets/" + image.desktop});
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: left;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
     background-image: url(${({ image }) => "/src/assets/" + image.tablet});
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     background-image: url(${({ image }) => "/src/assets/" + image.mobile});
+    background-position: center;
   }
 `;
 
