@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Hero, CategoryCard, BrandStory } from "components/app";
-import { Container } from "components/common";
+import { Container, FadeInOnScroll } from "components/common";
 import HeadphonesImage from 'assets/images/shared/desktop/image-headphones.png';
 import SpeakersImage from 'assets/images/shared/desktop/image-speakers.png';
 import EarphonesImage from 'assets/images/shared/desktop/image-earphones.png';
@@ -37,11 +37,19 @@ export const Home = (): JSX.Element => {
           <CategoryCard image={EarphonesImage} title="Earphones" href="/earphones" />
         </CategoriesGroup>
         <ProductsGroup>
-          <ZX9Speaker />
-          <ZX7Speaker />
-          <YX1Earphones />
+          <FadeInOnScroll>
+            <ZX9Speaker />
+          </FadeInOnScroll>
+          <FadeInOnScroll>
+            <ZX7Speaker />
+          </FadeInOnScroll>
+          <FadeInOnScroll>
+            <YX1Earphones />
+          </FadeInOnScroll>
         </ProductsGroup>
-        <BrandStory />
+        <FadeInOnScroll>
+          <BrandStory />
+        </FadeInOnScroll>
       </Container>
     </>
   )
