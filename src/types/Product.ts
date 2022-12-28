@@ -1,4 +1,4 @@
-interface Breakpoints {
+export interface Breakpoints {
   mobile: string;
   tablet: string;
   desktop: string;

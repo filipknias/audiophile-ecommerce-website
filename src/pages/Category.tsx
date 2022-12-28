@@ -1,6 +1,18 @@
 import { getProductByCategory } from "utilities/products";
 import { useParams } from "react-router-dom";
-import { Hero } from "components/common";
+import { Container, Hero } from "components/common";
+import { ProductCard } from "components/products";
+import styled from "styled-components";
+
+const Stack = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+  margin: 50px 0;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    gap: 2rem;
+  }
+`;
 
 export const Category = (): JSX.Element => {
   const params = useParams();
@@ -9,6 +21,13 @@ export const Category = (): JSX.Element => {
   return (
     <>
       <Hero>{params.category}</Hero>
+      <Container>
+        <Stack>
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </Stack>
+      </Container>
     </>
   )
 }
