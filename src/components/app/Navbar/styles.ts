@@ -40,6 +40,10 @@ export const NavLink = styled.li<NavLinkProps>`
   font-weight: ${({ theme }) => theme.fonts.bold};
   color: ${({ active, theme }) => active ? theme.palette.orange : theme.text.white};
   letter-spacing: 3px;
+  transition: color 0.1s ease-in;
+  &:hover {
+    color: ${({ theme }) => theme.palette.orange};
+  }
 `;
 
 export const Cart = styled.img`
