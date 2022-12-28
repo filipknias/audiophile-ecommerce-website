@@ -14,7 +14,7 @@ const Stack = styled.div`
 
 export const Category = (): JSX.Element => {
   const params = useParams();
-  const products = params.category ? getProductByCategory(params.category) : [];
+  const products = params.category ? getProductByCategory(params.category).sort((a, b) => Number(b.new) - Number(a.new)) : [];
 
   return (
     <>
