@@ -23,7 +23,7 @@ export const Footer = (): JSX.Element => {
               <FooterLink>Home</FooterLink>
             </Link>
             {getCategories().map((category) => (
-              <Link to={`/${category}`}>
+              <Link to={`/${category}`} key={category}>
                 <FooterLink>{category}</FooterLink>
               </Link>
             ))}
