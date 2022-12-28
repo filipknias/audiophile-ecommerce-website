@@ -1,7 +1,7 @@
 import { Wrapper, HeroImage, NewProductText, Description, Title, HeroContent } from './styles';
 import { OrangeButton, Container } from 'components/common';
 
-export const Hero = (): JSX.Element => {
+export const ProductHero = (): JSX.Element => {
   return (
     <Wrapper>
       <Container>

@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Hero, CategoryCard, BrandStory } from "components/app";
+import { CategoryCard, BrandStory } from "components/app";
 import { Container, FadeInOnScroll } from "components/common";
 import HeadphonesImage from 'assets/images/shared/desktop/image-headphones.png';
 import SpeakersImage from 'assets/images/shared/desktop/image-speakers.png';
 import EarphonesImage from 'assets/images/shared/desktop/image-earphones.png';
-import { ZX9Speaker, ZX7Speaker, YX1Earphones } from "components/products";
+import { ZX9Speaker, ZX7Speaker, YX1Earphones, ProductHero } from "components/products";
 
 const CategoriesGroup = styled.div`
   width: 100%;
@@ -29,7 +29,7 @@ const ProductsGroup = styled.div`
 export const Home = (): JSX.Element => {
   return (
     <>
-      <Hero />
+      <ProductHero />
       <Container>
         <CategoriesGroup>
           <CategoryCard image={HeadphonesImage} title="Headphones" href="/headphones" />
