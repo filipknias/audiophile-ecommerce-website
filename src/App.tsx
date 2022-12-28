@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Navbar } from "components/app";
+import { Navbar, Footer } from "components/app";
 import { Home } from "pages";
 
 export default (): JSX.Element => {
@@ -9,6 +9,7 @@ export default (): JSX.Element => {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+      <Footer />
     </>
   )
 }
