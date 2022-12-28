@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Hero, CategoryCard } from "components/app";
+import { Hero, CategoryCard, BrandStory } from "components/app";
 import { Container } from "components/common";
 import HeadphonesImage from 'assets/images/shared/desktop/image-headphones.png';
 import SpeakersImage from 'assets/images/shared/desktop/image-speakers.png';
@@ -41,6 +41,7 @@ export const Home = (): JSX.Element => {
           <ZX7Speaker />
           <YX1Earphones />
         </ProductsGroup>
+        <BrandStory />
       </Container>
     </>
   )
