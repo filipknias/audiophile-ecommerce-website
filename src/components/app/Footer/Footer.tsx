@@ -9,6 +9,8 @@ import {
   FooterNav,
   FooterContainer,
 } from './styles';
+import { Link } from 'react-router-dom';
+import { getCategories } from 'utilities/products';
 
 export const Footer = (): JSX.Element => {
   return (
@@ -17,10 +19,14 @@ export const Footer = (): JSX.Element => {
         <FooterNav>
           <Brand>audiophile</Brand>
           <FooterLinks>
-            <FooterLink>Home</FooterLink>
-            <FooterLink>Headphones</FooterLink>
-            <FooterLink>Speakers</FooterLink>
-            <FooterLink>Earphones</FooterLink>
+            <Link to="/">
+              <FooterLink>Home</FooterLink>
+            </Link>
+            {getCategories().map((category) => (
+              <Link to={`/${category}`}>
+                <FooterLink>{category}</FooterLink>
+              </Link>
+            ))}
           </FooterLinks>
         </FooterNav>
         <DescriptionGroup>

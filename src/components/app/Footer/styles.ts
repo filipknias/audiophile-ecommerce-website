@@ -56,6 +56,10 @@ export const FooterLink = styled.li`
   font-weight: ${({ theme }) => theme.fonts.bold};
   color: ${({ theme }) => theme.text.white};
   letter-spacing: 3px;
+  transition: color 0.1s ease-in;
+  &:hover {
+    color: ${({ theme }) => theme.palette.orange};
+  }
 `;
 
 export const DescriptionGroup = styled.div`
