@@ -4,7 +4,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Hero = styled.div`
+const HeroWrapper = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.background.dark};
   color: ${({ theme }) => theme.text.white};
@@ -19,8 +19,8 @@ const Hero = styled.div`
   height: 250px;
 `;
 
-export const TextHero = ({ children }: Props): JSX.Element => {
+export const Hero = ({ children }: Props): JSX.Element => {
   return (
-    <Hero>{children}</Hero>
+    <HeroWrapper>{children}</HeroWrapper>
   )
 }

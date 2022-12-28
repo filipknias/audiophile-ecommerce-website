@@ -1,6 +1,6 @@
 import { getProductByCategory } from "utilities/products";
 import { useParams } from "react-router-dom";
-import { TextHero } from "components/common";
+import { Hero } from "components/common";
 
 export const Category = (): JSX.Element => {
   const params = useParams();
@@ -8,7 +8,7 @@ export const Category = (): JSX.Element => {
 
   return (
     <>
-      <TextHero>{params.category}</TextHero>
+      <Hero>{params.category}</Hero>
     </>
   )
 }
