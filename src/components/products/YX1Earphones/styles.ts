@@ -39,7 +39,7 @@ export const Content = styled.div`
   border-top-right-radius: ${({ theme }) => theme.borderRadius};
   border-bottom-right-radius: ${({ theme }) => theme.borderRadius};
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    padding-left: 1.5rem; 
+    padding-left: 2rem; 
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.xs}) {
     border-bottom-left-radius: ${({ theme }) => theme.borderRadius};
