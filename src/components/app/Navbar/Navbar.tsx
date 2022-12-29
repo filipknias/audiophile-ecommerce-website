@@ -18,7 +18,7 @@ export const Navbar = (): JSX.Element => {
           </BrandGroup>
           <NavLinks>
             <Link to="/">
-              <NavLink active={pathname === "/"}>Home</NavLink>
+              <NavLink active={pathname === "/"} role="nav-link">home</NavLink>
             </Link>
             {getCategories().map((category) => 
               <Link key={category} to={`/${category}`}>
