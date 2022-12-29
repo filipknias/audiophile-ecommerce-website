@@ -4,6 +4,7 @@ import { Container, OrangeButton } from "components/common";
 import { AmountInput } from "../AmountInput/AmountInput";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FeaturesSection } from './FeaturesSection';
 
 interface Props {
   product: Product;
@@ -43,6 +44,7 @@ export const ProductView = ({ product }: Props): JSX.Element => {
           </ButtonGroup>
         </Content>
       </ProductWrapper>
+      <FeaturesSection featuresText={product.features} includedItems={product.includedItems} />
     </Container>
   )
 }
