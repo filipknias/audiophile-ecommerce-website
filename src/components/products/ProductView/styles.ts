@@ -5,10 +5,13 @@ interface ProductImageProps {
   image: Breakpoints;
 }
 
-export const GoBackLabel = styled.span`
-  color: ${({ theme }) => theme.text.light};
+export const GoBackLabel = styled.p`
+  color: ${({ theme }) => theme.text.dark};
   font-weight: ${({ theme }) => theme.fonts.light};
   font-size: 1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  display: inline-block;
   &:hover {
     text-decoration: underline;
   }
@@ -20,13 +23,14 @@ export const ProductImage = styled.div<ProductImageProps>`
   background-image: url(${({ image }) => "/src/assets/" + image.desktop});
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: left;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
     background-image: url(${({ image }) => "/src/assets/" + image.tablet});
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     background-image: url(${({ image }) => "/src/assets/" + image.mobile});
     margin-bottom: 2rem;
+    background-position: center;
   }
 `;
 

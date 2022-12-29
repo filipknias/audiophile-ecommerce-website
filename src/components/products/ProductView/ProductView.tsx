@@ -3,6 +3,7 @@ import { GoBackLabel, Content, Description, NewProductLabel, Price, ProductImage
 import { Container, OrangeButton } from "components/common";
 import { AmountInput } from "../AmountInput/AmountInput";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   product: Product;
@@ -10,6 +11,7 @@ interface Props {
 
 export const ProductView = ({ product }: Props): JSX.Element => {
   const [amount, setAmount] = useState(1);
+  const navigate = useNavigate();
 
   const handleAmountIncrease = () => {
     setAmount((prevAmount) => prevAmount + 1);
@@ -23,7 +25,7 @@ export const ProductView = ({ product }: Props): JSX.Element => {
 
   return (
     <Container>
-      <GoBackLabel>Go Back</GoBackLabel>
+      <GoBackLabel onClick={() => navigate(-1)}>Go Back</GoBackLabel>
       <ProductWrapper>
         <ProductImage image={product.categoryImage}></ProductImage>
         <Content>
