@@ -1,5 +1,6 @@
 import { Wrapper, Content, ImagePlacement, Title } from "./styles";
 import { OutlinedButton } from "components/common";
+import { Link } from 'react-router-dom';
 
 export const YX1Earphones = (): JSX.Element => {
   return (
@@ -7,7 +8,9 @@ export const YX1Earphones = (): JSX.Element => {
       <ImagePlacement></ImagePlacement>
       <Content>
         <Title>YX1 EARPHONES</Title>
-        <OutlinedButton>See product</OutlinedButton>
+        <Link to="/earphones/yx1-earphones">
+          <OutlinedButton>See product</OutlinedButton>
+        </Link>
       </Content>
     </Wrapper>
   )

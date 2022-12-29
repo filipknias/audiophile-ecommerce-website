@@ -15,7 +15,9 @@ export const ProductCard = ({ product }: Props): JSX.Element => {
         {product.new && <NewProductLabel>New product</NewProductLabel>}
         <Title>{product.name}</Title>
         <Description>{product.description}</Description>
-        <OrangeButton>See product</OrangeButton>
+        <Link to={`/${product.category}/${product.slug}`}>
+          <OrangeButton>See product</OrangeButton>
+        </Link>
       </Content>
     </Wrapper>
   )
