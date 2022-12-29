@@ -85,3 +85,8 @@ export const Price = styled.span`
   color: ${({ theme }) => theme.text.black};
   font-size: 1.2rem;
 `;
+
+export const ButtonGroup = styled.div`
+  display: flex;
+  gap: 20px;
+`;

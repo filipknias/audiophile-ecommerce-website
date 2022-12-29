@@ -4,3 +4,4 @@ export { YX1Earphones } from './YX1Earphones/YX1Earphones';
 export { ProductHero } from './ProductHero/ProductHero';
 export { ProductCard } from './ProductCard/ProductCard';
 export { ProductView } from './ProductView/ProductView';
+export { AmountInput } from './AmountInput/AmountInput';

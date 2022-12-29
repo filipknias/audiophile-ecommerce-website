@@ -1,12 +1,26 @@
 import { Product } from "types/Product";
-import { GoBackLabel, Content, Description, NewProductLabel, Price, ProductImage, ProductWrapper, Title } from './styles';
+import { GoBackLabel, Content, Description, NewProductLabel, Price, ProductImage, ProductWrapper, Title, ButtonGroup } from './styles';
 import { Container, OrangeButton } from "components/common";
+import { AmountInput } from "../AmountInput/AmountInput";
+import { useState } from "react";
 
 interface Props {
   product: Product;
 }
 
 export const ProductView = ({ product }: Props): JSX.Element => {
+  const [amount, setAmount] = useState(1);
+
+  const handleAmountIncrease = () => {
+    setAmount((prevAmount) => prevAmount + 1);
+  };
+
+  const handleAmountDecrease = () => {
+    if (amount > 1) {
+      setAmount((prevAmount) => prevAmount - 1);
+    }
+  };
+
   return (
     <Container>
       <GoBackLabel>Go Back</GoBackLabel>
@@ -17,7 +31,14 @@ export const ProductView = ({ product }: Props): JSX.Element => {
           <Title>{product.name}</Title>
           <Description>{product.description}</Description>
           <Price>${product.price}</Price>
-          <OrangeButton>Add to cart</OrangeButton>
+          <ButtonGroup>
+            <AmountInput
+              amount={amount}
+              onAmountDecrease={handleAmountDecrease}
+              onAmountIncrease={handleAmountIncrease}
+            />
+            <OrangeButton>Add to cart</OrangeButton>
+          </ButtonGroup>
         </Content>
       </ProductWrapper>
     </Container>
