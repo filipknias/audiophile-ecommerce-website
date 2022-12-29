@@ -11,7 +11,6 @@ export const GalleryWrapper = styled.div`
   grid-template-rows: 1fr 1fr;
   gap: 20px;
   height: 600px;
-  margin: 80px 0;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
     height: 500px;
   }

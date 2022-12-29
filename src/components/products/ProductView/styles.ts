@@ -5,11 +5,17 @@ interface ImageProps {
   image: Breakpoints;
 }
 
+export const Stack = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 2rem 0 4rem 0;
+`;
+
 export const GoBackLabel = styled.p`
   color: ${({ theme }) => theme.text.dark};
   font-weight: ${({ theme }) => theme.fonts.light};
   font-size: 1rem;
-  margin-top: 2rem;
   cursor: pointer;
   display: inline-block;
   &:hover {
