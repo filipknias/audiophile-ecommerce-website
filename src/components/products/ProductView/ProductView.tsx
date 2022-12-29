@@ -5,6 +5,7 @@ import { AmountInput } from "../AmountInput/AmountInput";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FeaturesSection } from './FeaturesSection';
+import { ProductGallery } from './ProductGallery';
 
 interface Props {
   product: Product;
@@ -45,6 +46,7 @@ export const ProductView = ({ product }: Props): JSX.Element => {
         </Content>
       </ProductWrapper>
       <FeaturesSection featuresText={product.features} includedItems={product.includedItems} />
+      <ProductGallery images={product.gallery} />
     </Container>
   )
 }
