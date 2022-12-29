@@ -1,6 +1,7 @@
 import { Product } from "types/Product";
 import { Wrapper, Content, Description, NewProductLabel, ProductImage, Title } from './styles';
 import { OrangeButton } from "components/common";
+import { Link } from "react-router-dom";
 
 interface Props {
   product: Product;

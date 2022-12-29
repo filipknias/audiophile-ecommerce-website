@@ -5,12 +5,35 @@ interface ProductImageProps {
   image: Breakpoints;
 }
 
+export const ProductImage = styled.div<ProductImageProps>`
+  border-radius: ${({ theme }) => theme.borderRadius};
+  flex: 1;
+  background-image: url(${({ image }) => "/src/assets/" + image.desktop});
+  background-repeat: no-repeat;
+  background-size: contain;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    background-image: url(${({ image }) => "/src/assets/" + image.tablet});
+  }
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    background-image: url(${({ image }) => "/src/assets/" + image.mobile});
+    background-position: center;
+  }
+`;
+
 export const Wrapper = styled.div`
   display: flex;
   height: 500px;
-  gap: 30px;
+  gap: 50px;
   &:nth-child(even) {
     flex-flow: row-reverse;
+  }
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    &:nth-child(even) ${ProductImage} {
+      background-position: left;
+    }
+    &:nth-child(even) ${ProductImage} { 
+      background-position: right;
+    }
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
     height: 300px;
@@ -24,22 +47,6 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const ProductImage = styled.div<ProductImageProps>`
-  border-radius: ${({ theme }) => theme.borderRadius};
-  flex: 1;
-  background-image: url(${({ image }) => "/src/assets/" + image.desktop});
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left;
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.tablet});
-  }
-  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.mobile});
-    background-position: center;
-  }
-`;
-
 export const Content = styled.div`
   flex: 1;
   display: flex;
@@ -50,9 +57,6 @@ export const Content = styled.div`
     align-items: center;
     text-align: center;
     padding: 0 1rem;
-  }
-  &:nth-child(odd) {
-    padding-left: 7rem;
   }
 `;
 
