@@ -4,7 +4,7 @@ import EarphonesImage from 'assets/images/shared/desktop/image-earphones.png';
 import { CategoryCard } from 'components/app';
 import { CategoriesWrapper } from './styles';
 
-export const CategoriesCardsList = (): JSX.Element => {
+export const CategoriesStack = (): JSX.Element => {
   return (
     <CategoriesWrapper>
       <CategoryCard image={HeadphonesImage} title="Headphones" href="/headphones" />
