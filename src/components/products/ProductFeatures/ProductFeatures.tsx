@@ -14,7 +14,7 @@ interface Props {
   includedItems: { quantity: number; item: string; }[];
 }
 
-export const FeaturesSection = ({ featuresText, includedItems }: Props): JSX.Element => {
+export const ProductFeatures = ({ featuresText, includedItems }: Props): JSX.Element => {
   return (
     <SectionWrapper>
       <FeaturesWrapper>

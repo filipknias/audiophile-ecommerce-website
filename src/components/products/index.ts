@@ -5,3 +5,5 @@ export { ProductHero } from './ProductHero/ProductHero';
 export { ProductCard } from './ProductCard/ProductCard';
 export { ProductView } from './ProductView/ProductView';
 export { AmountInput } from './AmountInput/AmountInput';
+export { ProductFeatures } from './ProductFeatures/ProductFeatures';
+export { ProductGallery } from './ProductGallery/ProductGallery';
