@@ -19,7 +19,7 @@ export default (): JSX.Element => {
         newestOnTop={false}
         closeOnClick
         rtl={false}
-        pauseOnFocusLoss
+        pauseOnFocusLoss={false}
         draggable={false}
         pauseOnHover={false}
         theme="light"
