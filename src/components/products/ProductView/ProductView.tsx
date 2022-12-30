@@ -72,7 +72,7 @@ export const ProductView = ({ product }: Props): JSX.Element => {
                 onAmountDecrease={handleAmountDecrease}
                 onAmountIncrease={handleAmountIncrease}
               />
-              <OrangeButton onClick={handleAddItem}>Add to cart</OrangeButton>
+              <OrangeButton onClick={handleAddItem} role="add-item-button">Add to cart</OrangeButton>
             </ButtonGroup>
           </Content>
         </ProductWrapper>
