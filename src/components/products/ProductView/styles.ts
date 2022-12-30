@@ -12,12 +12,12 @@ export const Stack = styled.div`
   margin: 2rem 0 4rem 0;
 `;
 
-export const GoBackLabel = styled.p`
+export const GoBackLabel = styled.a`
   color: ${({ theme }) => theme.text.dark};
   font-weight: ${({ theme }) => theme.fonts.light};
   font-size: 1rem;
   cursor: pointer;
-  display: inline-block;
+  margin-right: auto;
   &:hover {
     text-decoration: underline;
   }
