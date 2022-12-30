@@ -19,6 +19,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "redux/hooks";
 import { addItem } from "redux/features/cartSlice";
+import { toast } from 'react-toastify';
 
 interface Props {
   product: Product;
@@ -53,6 +54,7 @@ export const ProductView = ({ product }: Props): JSX.Element => {
       quantity: amount,
       slug: product.slug,
     }));
+    toast.success(`Item ${product.name} was added to cart`);
   }
 
   return (
