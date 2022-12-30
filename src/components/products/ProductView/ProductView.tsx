@@ -17,6 +17,8 @@ import { AmountInput, ProductFeatures, ProductGallery, RelatedProducts, ProductC
 import { BrandStory } from "components/app";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "redux/hooks";
+import { addItem } from "redux/features/cartSlice";
 
 interface Props {
   product: Product;
@@ -25,6 +27,7 @@ interface Props {
 export const ProductView = ({ product }: Props): JSX.Element => {
   const [amount, setAmount] = useState(1);
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const handleAmountIncrease = () => {
     setAmount((prevAmount) => prevAmount + 1);
@@ -40,6 +43,17 @@ export const ProductView = ({ product }: Props): JSX.Element => {
     ...relatedProduct,
     category: product.category,
   }));
+
+  const handleAddItem = () => {
+    dispatch(addItem({
+      id: product.id,
+      image: product.cartImage,
+      name: product.name,
+      price: product.price,
+      quantity: amount,
+      slug: product.slug,
+    }));
+  }
 
   return (
     <Container>
@@ -58,7 +72,7 @@ export const ProductView = ({ product }: Props): JSX.Element => {
                 onAmountDecrease={handleAmountDecrease}
                 onAmountIncrease={handleAmountIncrease}
               />
-              <OrangeButton>Add to cart</OrangeButton>
+              <OrangeButton onClick={handleAddItem}>Add to cart</OrangeButton>
             </ButtonGroup>
           </Content>
         </ProductWrapper>
