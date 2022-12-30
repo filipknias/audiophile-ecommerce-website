@@ -13,7 +13,8 @@ import {
   StackTitle,
 } from './styles';
 import { Container, OrangeButton } from "components/common";
-import { AmountInput, ProductFeatures, ProductGallery, RelatedProducts } from "components/products";
+import { AmountInput, ProductFeatures, ProductGallery, RelatedProducts, ProductCategories } from "components/products";
+import { BrandStory } from "components/app";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -70,6 +71,8 @@ export const ProductView = ({ product }: Props): JSX.Element => {
           <StackTitle>You may also like</StackTitle>
           <RelatedProducts products={relatedProducts} />
         </Stack>
+        <ProductCategories />
+        <BrandStory />
       </Stack>
     </Container>
   )

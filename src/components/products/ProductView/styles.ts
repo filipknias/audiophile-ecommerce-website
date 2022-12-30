@@ -8,7 +8,7 @@ interface ImageProps {
 export const Stack = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 60px;
   margin: 2rem 0 4rem 0;
 `;
 
