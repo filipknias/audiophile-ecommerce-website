@@ -100,3 +100,10 @@ export const ButtonGroup = styled.div`
   display: flex;
   gap: 20px;
 `;
+
+export const StackTitle = styled.h1`
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1rem;
+`;

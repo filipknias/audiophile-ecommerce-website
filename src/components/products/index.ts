@@ -7,3 +7,4 @@ export { ProductView } from './ProductView/ProductView';
 export { AmountInput } from './AmountInput/AmountInput';
 export { ProductFeatures } from './ProductFeatures/ProductFeatures';
 export { ProductGallery } from './ProductGallery/ProductGallery';
+export { RelatedProducts } from './RelatedProducts/RelatedProducts';

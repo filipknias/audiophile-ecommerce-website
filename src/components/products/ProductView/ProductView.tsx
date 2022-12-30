@@ -10,9 +10,10 @@ import {
   Title, 
   ButtonGroup,
   Stack,
+  StackTitle,
 } from './styles';
 import { Container, OrangeButton } from "components/common";
-import { AmountInput, ProductFeatures, ProductGallery } from "components/products";
+import { AmountInput, ProductFeatures, ProductGallery, RelatedProducts } from "components/products";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -33,6 +34,11 @@ export const ProductView = ({ product }: Props): JSX.Element => {
       setAmount((prevAmount) => prevAmount - 1);
     }
   };
+
+  const relatedProducts = product.others.map((relatedProduct) => ({
+    ...relatedProduct,
+    category: product.category,
+  }));
 
   return (
     <Container>
@@ -60,6 +66,10 @@ export const ProductView = ({ product }: Props): JSX.Element => {
           includedItems={product.includedItems} 
         />
         <ProductGallery images={product.gallery} />
+        <Stack>
+          <StackTitle>You may also like</StackTitle>
+          <RelatedProducts products={relatedProducts} />
+        </Stack>
       </Stack>
     </Container>
   )
