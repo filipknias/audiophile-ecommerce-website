@@ -8,3 +8,5 @@ export { AmountInput } from './AmountInput/AmountInput';
 export { ProductFeatures } from './ProductFeatures/ProductFeatures';
 export { ProductGallery } from './ProductGallery/ProductGallery';
 export { RelatedProducts } from './RelatedProducts/RelatedProducts';
+export { ProductCategories } from './ProductCategories/ProductCategories';
+export { CategoryCard } from './CategoryCard/CategoryCard';

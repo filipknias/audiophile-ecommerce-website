@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { BrandStory, CategoriesStack } from "components/app";
+import { BrandStory } from "components/app";
 import { Container, FadeInOnScroll } from "components/common";
-import { ZX9Speaker, ZX7Speaker, YX1Earphones, ProductHero } from "components/products";
+import { ZX9Speaker, ZX7Speaker, YX1Earphones, ProductHero, ProductCategories } from "components/products";
 
 const ProductsGroup = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const Home = (): JSX.Element => {
       <ProductHero />
       <Container>
         <div style={{ margin: '7.5rem 0' }}>
-          <CategoriesStack />
+          <ProductCategories />
         </div>
         <ProductsGroup>
           <FadeInOnScroll>

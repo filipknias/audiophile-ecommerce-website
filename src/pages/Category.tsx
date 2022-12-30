@@ -1,9 +1,9 @@
 import { getProductByCategory } from "utilities/products";
 import { useParams } from "react-router-dom";
 import { Container, Hero } from "components/common";
-import { ProductCard } from "components/products";
+import { ProductCard, ProductCategories } from "components/products";
 import styled from "styled-components";
-import { CategoriesStack, BrandStory } from "components/app";
+import { BrandStory } from "components/app";
 
 const Stack = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ export const Category = (): JSX.Element => {
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-          <CategoriesStack />
+          <ProductCategories />
           <BrandStory />
         </Stack>
       </Container>

@@ -1,4 +1,4 @@
-import { CategoryCard } from "components/app";
+import { CategoryCard } from "components/products";
 import { render } from "utilities/testUtils";
 
 describe("category card component", () => {
