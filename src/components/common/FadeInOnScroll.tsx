@@ -6,15 +6,7 @@ interface Props {
 }
 
 const FadeInWrapper = styled.div`
-  animation: fadeIn 0.8s ease-in;
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+  animation: ${({ theme }) => `${theme.animations.fade} 0.8s ease-in`};
 `
 
 export const FadeInOnScroll = ({ children }: Props): JSX.Element => {

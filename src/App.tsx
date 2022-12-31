@@ -2,8 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import { Navbar, Footer } from "components/app";
 import { Home, Category, Product } from "pages";
 import { ToastContainer } from 'react-toastify';
+import { useAppSelector } from "redux/hooks";
 
 export default (): JSX.Element => {
+  const { activeModal } = useAppSelector((state) => state.modal);
   return (
     <>
       <Navbar />
@@ -25,6 +27,7 @@ export default (): JSX.Element => {
         theme="light"
       />
       <Footer />
+      {activeModal && activeModal}
     </>
   )
 }
