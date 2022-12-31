@@ -24,7 +24,7 @@ const ModalWrapper = styled.div`
   background-color: ${({ theme }) => theme.background.light};
   border-radius: ${({ theme }) => theme.borderRadius};
   padding: 2rem 1rem;
-  min-width: 500px;
+  width: 500px;
   animation: ${({ theme }) => `${theme.animations.fade} ${theme.transitions.fast} ease-in`};
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 90%;
