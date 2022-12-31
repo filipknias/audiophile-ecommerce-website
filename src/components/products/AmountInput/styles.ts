@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.palette.gray};
   font-weight: ${({ theme }) => theme.fonts.bold};
   transition: 0.2s ease-in;
-  width: 150px;
+  width: 100%;
   padding: 14px 0;
 `;
 
