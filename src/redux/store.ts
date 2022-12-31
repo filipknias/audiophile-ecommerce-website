@@ -1,14 +1,17 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import type { PreloadedState } from '@reduxjs/toolkit'
 import cartReducer from './features/cartSlice';
+import modalReducer from './features/modalSlice';
 
 const rootReducer = combineReducers({
-  cart: cartReducer
+  cart: cartReducer,
+  modal: modalReducer,
 })
 
 export const store = configureStore({
   reducer: {
     cart: cartReducer,
+    modal: modalReducer,
   },
 });
 
