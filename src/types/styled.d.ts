@@ -22,12 +22,21 @@ declare module 'styled-components' {
     background: {
       light: string;
       dark: string;
+      modal: string;
     },
     breakpoints: {
       lg: string;
       md: string;
       sm: string;
       xs: string;
+    },
+    transitions: {
+      fast: string;
+      medium: string;
+      long: string;
+    },
+    animations: {
+      fade: string;
     }
   }
 }

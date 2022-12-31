@@ -21,11 +21,20 @@ export const theme: DefaultTheme = {
   background: {
     light: '#fafafa',
     dark: '#191919',
+    modal: 'rgba(0, 0, 0, 0.8)',
   },
   breakpoints: {
     lg: '1400px',
     md: '1200px',
     sm: '1000px',
     xs: '600px',
-  }
+  },
+  transitions: {
+    fast: '0.1s',
+    medium: '0.4s',
+    long: '0.8s',
+  },
+  animations: {
+    fade: 'fade',
+  },
 }
