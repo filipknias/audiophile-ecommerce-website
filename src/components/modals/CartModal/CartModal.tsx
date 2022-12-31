@@ -16,9 +16,10 @@ import {
 } from './styles';
 import { useAppSelector, useAppDispatch } from "redux/hooks";
 import { AmountInput } from "components/products";
-import { increaseItemQuantity, decreaseItemQuantity, removeItem } from "redux/features/cartSlice";
+import { increaseItemQuantity, decreaseItemQuantity, removeItem, clearCart } from "redux/features/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { hideModal } from "redux/features/modalSlice";
+import { toast } from "react-toastify";
 
 export const CartModal = (): JSX.Element => {
   const { cart, total } = useAppSelector((state) => state.cart);
@@ -44,12 +45,17 @@ export const CartModal = (): JSX.Element => {
     navigate("/checkout");
   }
 
+  const handleClearCart = () => {
+    dispatch(clearCart());
+    toast.success("Cart is empty");
+  }
+
   return (
     <Modal>
       <Stack>
         <HeaderWrapper>
           <HeaderTitle>Cart ({cart.length})</HeaderTitle>
-          <RemoveAll>Remove All</RemoveAll>
+          <RemoveAll onClick={handleClearCart}>Remove All</RemoveAll>
         </HeaderWrapper>
         <ItemsWrapper>
           {cart.map((item) => (
