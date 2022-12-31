@@ -13,7 +13,7 @@ const Button = styled.button<ButtonProps>`
   font-size: 0.8rem;
   font-weight: ${({ theme }) => theme.fonts.bold};
   cursor: pointer;
-  transition: 0.1s ease-in;
+  transition: ${({ theme }) => theme.transitions.fast} ease-in;
   border: none;
 `;
 
