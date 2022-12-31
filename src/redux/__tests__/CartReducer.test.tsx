@@ -1,5 +1,5 @@
 import { getProductById } from "utilities/products";
-import reducer, { addItem, removeItem, increaseItemQuantity, decreaseItemQuantity } from "redux/features/cartSlice";
+import reducer, { addItem, removeItem, increaseItemQuantity, decreaseItemQuantity, clearCart } from "redux/features/cartSlice";
 
 describe("cart reducer", () => {
   const product = getProductById(1);
@@ -63,6 +63,18 @@ describe("cart reducer", () => {
     expect(reducer(prevState, decreaseItemQuantity(mockCartItem.id))).toEqual({
       cart: [{ ...mockCartItem, quantity: mockCartItem.quantity - 1 }],
       total: mockCartItem.price * newQuantity,
+    });
+  });
+
+  it("should clear cart", () => {
+    const prevState = {
+      cart: [mockCartItem],
+      total: mockCartItem.price * mockCartItem.quantity,
+    };
+
+    expect(reducer(prevState, clearCart())).toEqual({
+      cart: [],
+      total: 0,
     });
   });
 });
