@@ -13,6 +13,7 @@ import {
   Total,
   TotalPrice,
   TotalWrapper,
+  EmptyCartText,
 } from './styles';
 import { useAppSelector, useAppDispatch } from "redux/hooks";
 import { AmountInput } from "components/products";
@@ -53,35 +54,41 @@ export const CartModal = (): JSX.Element => {
   return (
     <Modal>
       <Stack>
-        <HeaderWrapper>
-          <HeaderTitle>Cart ({cart.length})</HeaderTitle>
-          <RemoveAll onClick={handleClearCart}>Remove All</RemoveAll>
-        </HeaderWrapper>
-        <ItemsWrapper>
-          {cart.map((item) => (
-            <CartItem key={item.id}>
-              <ItemGroup>
-                <ItemImage src={`/src/assets/${item.image}`} alt={item.name} />
-                <div>
-                  <ItemName>{item.name}</ItemName>
-                  <ItemPrice>${item.price}</ItemPrice>
-                </div>
-              </ItemGroup>
-              <div style={{ width: '100px' }}>
-                <AmountInput
-                  amount={item.quantity}
-                  onAmountDecrease={() => handleAmountDecrease(item.id)}
-                  onAmountIncrease={() => handleAmountIncrease(item.id)}
-                />
-              </div>
-            </CartItem>
-          ))}
-        </ItemsWrapper>
-        <TotalWrapper>
-          <Total>Total</Total>
-          <TotalPrice>${total}</TotalPrice>
-        </TotalWrapper>
-        <OrangeButton full onClick={handleCheckoutClick}>Checkout</OrangeButton>
+        {cart.length > 0 ? (
+          <>
+            <HeaderWrapper>
+              <HeaderTitle>Cart ({cart.length})</HeaderTitle>
+              <RemoveAll onClick={handleClearCart}>Remove All</RemoveAll>
+            </HeaderWrapper>
+            <ItemsWrapper>
+              {cart.map((item) => (
+                <CartItem key={item.id}>
+                  <ItemGroup>
+                    <ItemImage src={`/src/assets/${item.image}`} alt={item.name} />
+                    <div>
+                      <ItemName>{item.name}</ItemName>
+                      <ItemPrice>${item.price}</ItemPrice>
+                    </div>
+                  </ItemGroup>
+                  <div style={{ width: '100px' }}>
+                    <AmountInput
+                      amount={item.quantity}
+                      onAmountDecrease={() => handleAmountDecrease(item.id)}
+                      onAmountIncrease={() => handleAmountIncrease(item.id)}
+                    />
+                  </div>
+                </CartItem>
+              ))}
+            </ItemsWrapper>
+            <TotalWrapper>
+              <Total>Total</Total>
+              <TotalPrice>${total}</TotalPrice>
+            </TotalWrapper>
+            <OrangeButton full onClick={handleCheckoutClick}>Checkout</OrangeButton>
+          </>
+        ) : (
+          <EmptyCartText>Your cart is empty</EmptyCartText>
+        )}
       </Stack>
     </Modal>
   )

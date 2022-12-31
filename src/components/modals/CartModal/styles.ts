@@ -86,3 +86,10 @@ export const TotalPrice = styled.span`
   font-size: 1.1rem;
   color: ${({ theme }) => theme.text.black};
 `;
+
+export const EmptyCartText = styled.h1`
+  font-weight: ${({ theme }) => theme.fonts.bold};
+  font-size: 1rem;
+  color: ${({ theme }) => theme.text.dark};
+  text-align: center;
+`;
