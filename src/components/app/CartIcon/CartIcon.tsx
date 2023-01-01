@@ -9,9 +9,9 @@ export const CartIcon = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
   return (
-    <Wrapper onClick={() => dispatch(openModal(<CartModal />))}>
+    <Wrapper onClick={() => dispatch(openModal(<CartModal />))} role="cart-icon">
       <Cart src={CartImage} alt="cart-icon" />
-      {cart.length > 0 && <AmountDisplay>{cart.length}</AmountDisplay>}
+      {cart.length > 0 && <AmountDisplay role="amount-display">{cart.length}</AmountDisplay>}
     </Wrapper>
   )
 }
