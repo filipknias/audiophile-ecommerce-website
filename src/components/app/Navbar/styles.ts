@@ -21,6 +21,7 @@ export const Nav = styled.nav`
 export const Brand = styled.h1`
   font-size: 30px;
   font-weight: ${({ theme }) => theme.fonts.bold};
+  color: ${({ theme }) => theme.text.white};
 `;
 
 export const NavLinks = styled.ul`

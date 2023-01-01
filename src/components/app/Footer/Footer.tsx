@@ -17,7 +17,9 @@ export const Footer = (): JSX.Element => {
     <FooterWrapper>
       <FooterContainer>
         <FooterNav>
-          <Brand>audiophile</Brand>
+          <Link to="/">
+            <Brand>audiophile</Brand>
+          </Link>
           <FooterLinks>
             <Link to="/">
               <FooterLink>Home</FooterLink>

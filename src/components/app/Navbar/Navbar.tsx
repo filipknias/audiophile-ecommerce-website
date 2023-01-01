@@ -11,7 +11,9 @@ export const Navbar = (): JSX.Element => {
     <Background>
       <Container>
         <Nav>
-          <Brand role="brand">audiophile</Brand>
+          <Link to="/">
+            <Brand role="brand">audiophile</Brand>
+          </Link>
           <NavLinks>
             <Link to="/">
               <NavLink active={pathname === "/"} role="nav-link">home</NavLink>
