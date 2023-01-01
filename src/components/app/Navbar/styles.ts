@@ -45,17 +45,3 @@ export const NavLink = styled.li<NavLinkProps>`
     color: ${({ theme }) => theme.palette.orange};
   }
 `;
-
-export const HamburgerMenu = styled.img`
-  cursor: pointer;
-  height: 20px;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-    display: none;
-  }
-`;
-
-export const BrandGroup = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 40px;
-`;

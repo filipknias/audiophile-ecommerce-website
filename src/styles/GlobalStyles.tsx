@@ -16,7 +16,6 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    margin-right: auto;
   }
 
   @keyframes fade {
