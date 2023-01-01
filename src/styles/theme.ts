@@ -16,12 +16,14 @@ export const theme: DefaultTheme = {
   palette: {
     orange: '#d87d4a',
     gray: '#f1f1f1',
+    light: '#d4d4d4',
     black: "#000",
   },
   background: {
     light: '#fafafa',
     dark: '#191919',
     modal: 'rgba(0, 0, 0, 0.8)',
+    white: '#fff',
   },
   breakpoints: {
     lg: '1400px',

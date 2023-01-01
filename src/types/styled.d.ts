@@ -17,10 +17,12 @@ declare module 'styled-components' {
     palette: {
       orange: string;
       gray: string;
+      light: string;
       black: string;
     },
     background: {
       light: string;
+      white: string;
       dark: string;
       modal: string;
     },
