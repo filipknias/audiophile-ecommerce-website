@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { e } from 'vitest/dist/index-40ebba2b';
 
 interface CartItem {
   id: number;
@@ -26,7 +25,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, { payload }: PayloadAction<CartItem>) => {
-      if (state.cart.some((item) => item.id === payload.id)) {
+      if (state.cart.find((item) => item.id === payload.id)) {
         state.cart = state.cart.map((item) => {
           if (item.id === payload.id) {
             return {
