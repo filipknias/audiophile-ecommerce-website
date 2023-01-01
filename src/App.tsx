@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Navbar, Footer } from "components/app";
-import { Home, Category, Product } from "pages";
+import { Home, Category, Product, Checkout } from "pages";
 import { ToastContainer } from 'react-toastify';
 import { useAppSelector } from "redux/hooks";
 
@@ -13,6 +13,7 @@ export default (): JSX.Element => {
         <Route path="/" element={<Home />} />
         <Route path="/:category" element={<Category />} />
         <Route path="/:category/:slug" element={<Product />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <ToastContainer
         position="top-left"
