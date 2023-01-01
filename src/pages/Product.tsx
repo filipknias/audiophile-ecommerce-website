@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { getProductBySlug } from "utilities/products";
 import { ProductView } from "components/products";
+import { Container } from "components/common";
 
 export const Product = (): JSX.Element => {
   const params = useParams();
@@ -10,8 +11,10 @@ export const Product = (): JSX.Element => {
   const product = slug ? getProductBySlug(slug) : navigate("/");
 
   return (
-    <>
-      {product && <ProductView product={product} />}
-    </>
+    <Container>
+      <>
+        {product && <ProductView product={product} />}
+      </>
+    </Container>
   )
 }

@@ -12,7 +12,7 @@ import {
   Stack,
   StackTitle,
 } from './styles';
-import { Container, OrangeButton } from "components/common";
+import { OrangeButton } from "components/common";
 import { AmountInput, ProductFeatures, ProductGallery, RelatedProducts, ProductCategories } from "components/products";
 import { BrandStory } from "components/app";
 import { useState } from "react";
@@ -58,40 +58,38 @@ export const ProductView = ({ product }: Props): JSX.Element => {
   }
 
   return (
-    <Container>
+    <Stack>
+      <GoBackLabel onClick={() => navigate(-1)}>Go Back</GoBackLabel>
+      <ProductWrapper>
+        <ProductImage image={product.categoryImage}></ProductImage>
+        <Content>
+          {product.new && <NewProductLabel>New product</NewProductLabel>}
+          <Title>{product.name}</Title>
+          <Description>{product.description}</Description>
+          <Price>${product.price}</Price>
+          <ButtonGroup>
+            <div style={{ width: '150px' }}>
+              <AmountInput
+                amount={amount}
+                onAmountDecrease={handleAmountDecrease}
+                onAmountIncrease={handleAmountIncrease}
+              />
+            </div>
+            <OrangeButton onClick={handleAddItem} role="add-item-button">Add to cart</OrangeButton>
+          </ButtonGroup>
+        </Content>
+      </ProductWrapper>
+      <ProductFeatures
+        featuresText={product.features} 
+        includedItems={product.includedItems} 
+      />
+      <ProductGallery images={product.gallery} />
       <Stack>
-        <GoBackLabel onClick={() => navigate(-1)}>Go Back</GoBackLabel>
-        <ProductWrapper>
-          <ProductImage image={product.categoryImage}></ProductImage>
-          <Content>
-            {product.new && <NewProductLabel>New product</NewProductLabel>}
-            <Title>{product.name}</Title>
-            <Description>{product.description}</Description>
-            <Price>${product.price}</Price>
-            <ButtonGroup>
-              <div style={{ width: '150px' }}>
-                <AmountInput
-                  amount={amount}
-                  onAmountDecrease={handleAmountDecrease}
-                  onAmountIncrease={handleAmountIncrease}
-                />
-              </div>
-              <OrangeButton onClick={handleAddItem} role="add-item-button">Add to cart</OrangeButton>
-            </ButtonGroup>
-          </Content>
-        </ProductWrapper>
-        <ProductFeatures
-          featuresText={product.features} 
-          includedItems={product.includedItems} 
-        />
-        <ProductGallery images={product.gallery} />
-        <Stack>
-          <StackTitle>You may also like</StackTitle>
-          <RelatedProducts products={relatedProducts} />
-        </Stack>
-        <ProductCategories />
-        <BrandStory />
+        <StackTitle>You may also like</StackTitle>
+        <RelatedProducts products={relatedProducts} />
       </Stack>
-    </Container>
+      <ProductCategories />
+      <BrandStory />
+    </Stack>
   )
 }
