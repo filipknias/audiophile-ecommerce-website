@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const HeroWrapper = styled.div`
+export const Hero = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.background.dark};
   color: ${({ theme }) => theme.text.white};
@@ -18,9 +14,3 @@ const HeroWrapper = styled.div`
   justify-content: center;
   height: 250px;
 `;
-
-export const Hero = ({ children }: Props): JSX.Element => {
-  return (
-    <HeroWrapper>{children}</HeroWrapper>
-  )
-}
