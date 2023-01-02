@@ -17,6 +17,7 @@ import {
 } from './styles';
 import { useAppSelector } from 'redux/hooks';
 import { SHIPPING_FEE, TAX_RATE } from 'data/constants';
+import { OrangeButton } from 'components/common';
 
 export const CartSummary = (): JSX.Element => {
   const { cart, total } = useAppSelector((state) => state.cart);
@@ -59,6 +60,7 @@ export const CartSummary = (): JSX.Element => {
             <ListItemTextOrange>${grandTotal.toFixed(1)}</ListItemTextOrange>
           </ListItem>
         </List>
+        <OrangeButton full>Continue & Pay</OrangeButton>
       </Stack>
     </Wrapper>
   )
