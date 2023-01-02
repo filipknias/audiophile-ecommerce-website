@@ -30,6 +30,7 @@ export const FormGroupHeader = styled.span`
   color: ${({ theme }) => theme.palette.orange};
   font-size: 0.8rem;
   font-weight: ${({ theme }) => theme.fonts.bold};
+  letter-spacing: 0.5px;
   display: block;
 `;
 

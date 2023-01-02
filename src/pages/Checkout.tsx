@@ -1,8 +1,9 @@
 import { Container } from "components/common";
 import styled from "styled-components";
 import { CheckoutForm } from "components/forms";
+import { CartSummary } from "components/app";
 
-export const GoBackLabel = styled.span`
+const GoBackLabel = styled.span`
   color: ${({ theme }) => theme.text.dark};
   font-weight: ${({ theme }) => theme.fonts.light};
   font-size: 1rem;
@@ -15,11 +16,21 @@ export const GoBackLabel = styled.span`
   }
 `;
 
+const Wrapper = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
 export const Checkout = (): JSX.Element => {
   return (
     <Container>
       <GoBackLabel>Go Back</GoBackLabel>
-      <CheckoutForm />
+      <Wrapper>
+        <div style={{ flex: 1 }}>
+          <CheckoutForm />
+        </div>
+        <CartSummary />
+      </Wrapper>
     </Container>
   )
 }
