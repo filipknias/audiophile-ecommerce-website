@@ -16,9 +16,13 @@ import {
   Wrapper,
 } from './styles';
 import { useAppSelector } from 'redux/hooks';
+import { SHIPPING_FEE, TAX_RATE } from 'data/constants';
 
 export const CartSummary = (): JSX.Element => {
   const { cart, total } = useAppSelector((state) => state.cart);
+  const taxValue = total * TAX_RATE;
+  const grandTotal = total + taxValue + SHIPPING_FEE;
+
   return (
     <Wrapper>
       <Stack>
@@ -44,15 +48,15 @@ export const CartSummary = (): JSX.Element => {
           </ListItem>
           <ListItem>
             <ListItemTitle>Shipping</ListItemTitle>
-            <ListItemText>$50</ListItemText>
+            <ListItemText>${SHIPPING_FEE}</ListItemText>
           </ListItem>
           <ListItem>
             <ListItemTitle>Vat (included)</ListItemTitle>
-            <ListItemText>$120</ListItemText>
+            <ListItemText>${taxValue.toFixed(1)}</ListItemText>
           </ListItem>
           <ListItem>
             <ListItemTitle>Grand total</ListItemTitle>
-            <ListItemTextOrange>$800</ListItemTextOrange>
+            <ListItemTextOrange>${grandTotal.toFixed(1)}</ListItemTextOrange>
           </ListItem>
         </List>
       </Stack>
