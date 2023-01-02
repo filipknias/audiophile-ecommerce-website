@@ -19,7 +19,11 @@ import { useAppSelector } from 'redux/hooks';
 import { SHIPPING_FEE, TAX_RATE } from 'data/constants';
 import { OrangeButton } from 'components/common';
 
-export const CartSummary = (): JSX.Element => {
+interface Props {
+  onSubmit: () => void;
+}
+
+export const CartSummary = ({ onSubmit }: Props): JSX.Element => {
   const { cart, total } = useAppSelector((state) => state.cart);
   const taxValue = total * TAX_RATE;
   const grandTotal = total + taxValue + SHIPPING_FEE;
@@ -60,7 +64,7 @@ export const CartSummary = (): JSX.Element => {
             <ListItemTextOrange>${grandTotal.toFixed(1)}</ListItemTextOrange>
           </ListItem>
         </List>
-        <OrangeButton full>Continue & Pay</OrangeButton>
+        <OrangeButton full onClick={onSubmit}>Continue & Pay</OrangeButton>
       </Stack>
     </Wrapper>
   )

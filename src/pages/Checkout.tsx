@@ -2,6 +2,7 @@ import { Container } from "components/common";
 import styled from "styled-components";
 import { CheckoutForm } from "components/forms";
 import { CartSummary } from "components/app";
+import { useForm, FormProvider, useFormContext } from "react-hook-form";
 
 const GoBackLabel = styled.span`
   color: ${({ theme }) => theme.text.dark};
@@ -25,15 +26,22 @@ const Wrapper = styled.div`
 `;
 
 export const Checkout = (): JSX.Element => {
+  const methods = useForm();
+  const onSubmit = (data: any) => console.log(data);
+
   return (
-    <Container>
-      <GoBackLabel>Go Back</GoBackLabel>
-      <Wrapper>
-        <div style={{ flex: 1 }}>
-          <CheckoutForm />
-        </div>
-        <CartSummary />
-      </Wrapper>
-    </Container>
+    <FormProvider {...methods} >
+      <form onSubmit={methods.handleSubmit(onSubmit)}>
+        <Container>
+          <GoBackLabel>Go Back</GoBackLabel>
+          <Wrapper>
+            <div style={{ flex: 1 }}>
+              <CheckoutForm />
+            </div>
+            <CartSummary onSubmit={methods.handleSubmit(onSubmit)} />
+          </Wrapper>
+        </Container>
+      </form>
+    </FormProvider>
   )
 }
