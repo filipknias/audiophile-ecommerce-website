@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
   margin-bottom: 2rem;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 100%;
+    padding: 2rem 1.5rem;
   }
 `;
 

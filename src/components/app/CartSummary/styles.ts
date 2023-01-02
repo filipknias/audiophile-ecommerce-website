@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   width: 400px;
   background-color: ${({ theme }) => theme.background.white};
   border-radius: ${({ theme }) => theme.borderRadius};
-  padding: 2rem;
+  padding: 2.5rem 2rem;
   height: min-content;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     width: 100%;
