@@ -15,6 +15,7 @@ import CashOnDeliveryImage from 'assets/images/checkout/icon-cash-on-delivery.sv
 import { TextInput, RadioButton } from 'components/common';
 import { useState } from 'react';
 import { useFormContext } from "react-hook-form";
+import { PaymentMethods } from 'data/constants';
 
 const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 const errorMessages = {
@@ -22,27 +23,11 @@ const errorMessages = {
   pattern: "Wrong format",
 }
 
-enum PaymentMethods {
-  E_MONEY = "e-money",
-  CASH_ON_DELIVERY = "cash-on-delivery",
-}
-
 export const CheckoutForm = (): JSX.Element => {
-  const [eMoneyActive, setEMoneyActive] = useState(true);
-  const [cashOnDeliveryActive, setCashOnDeliveryActive] = useState(false);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<PaymentMethods>(PaymentMethods.E_MONEY);
   const { register, handleSubmit, formState: { errors } } = useFormContext();
 
   console.log(errors)
-
-  const handlePaymentMethodChange = (paymentMethod: PaymentMethods) => {
-    if (paymentMethod === PaymentMethods.E_MONEY) {
-      setEMoneyActive(true);
-      setCashOnDeliveryActive(false);
-    } else {
-      setCashOnDeliveryActive(true);
-      setEMoneyActive(false);
-    }
-  }
 
   return (
     <Wrapper>
@@ -124,17 +109,17 @@ export const CheckoutForm = (): JSX.Element => {
           <FormLabel>Payment Method</FormLabel>
           <RadioGroup>
             <RadioButton 
-              checked={eMoneyActive} 
+              checked={selectedPaymentMethod === PaymentMethods.E_MONEY} 
               label="e-Money" 
-              onChange={() => handlePaymentMethodChange(PaymentMethods.E_MONEY)} 
+              onChange={() => setSelectedPaymentMethod(PaymentMethods.E_MONEY)} 
             /> 
             <RadioButton 
-              checked={cashOnDeliveryActive} 
+              checked={selectedPaymentMethod === PaymentMethods.CASH_ON_DELIVERY} 
               label="Cash on Delivery" 
-              onChange={() => handlePaymentMethodChange(PaymentMethods.CASH_ON_DELIVERY)} 
+              onChange={() => setSelectedPaymentMethod(PaymentMethods.CASH_ON_DELIVERY)} 
             /> 
           </RadioGroup>
-          {eMoneyActive ? (
+          {selectedPaymentMethod === PaymentMethods.E_MONEY ? (
             <>  
               <FormGroup>
                 <FormLabel>e-Money Number</FormLabel>
