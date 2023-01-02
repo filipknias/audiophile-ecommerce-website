@@ -15,6 +15,9 @@ export const Wrapper = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
   padding: 3rem;
   margin-bottom: 2rem;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 100%;
+  }
 `;
 
 export const Header = styled.h1`
@@ -39,6 +42,10 @@ export const FormContainer = styled.div`
   gap: 1.5rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 `;
 
 export const FormGroup = styled.div<FormGroupProps>`
@@ -47,6 +54,10 @@ export const FormGroup = styled.div<FormGroupProps>`
   gap: 0.8rem;
   grid-column-start: ${({ full }) => full ? 1 : 'auto'};
   grid-column-end: ${({ full }) => full ? 3 : 'auto'};
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    grid-column-start: auto;
+    grid-column-end: auto;
+  }
 `;
 
 export const FormLabel = styled.label`

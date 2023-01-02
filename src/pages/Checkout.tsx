@@ -19,6 +19,9 @@ const GoBackLabel = styled.span`
 const Wrapper = styled.div`
   display: flex;
   gap: 20px;
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    flex-direction: column;
+  }
 `;
 
 export const Checkout = (): JSX.Element => {
