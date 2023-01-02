@@ -72,3 +72,23 @@ export const RadioGroup = styled.div`
   flex-direction: column;
   gap: 10px;
 `;
+
+export const PaymentMethodWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+`;
+
+export const PaymentMethodImage = styled.img`
+  width: 48px;
+  height: 48px;
+`;
+
+export const PaymentMethodText = styled.p`
+  color: ${({ theme }) => theme.text.dark};
+  font-size: 1rem;
+  font-weight: ${({ theme }) => theme.fonts.normal};
+  line-height: 1.6;
+`;

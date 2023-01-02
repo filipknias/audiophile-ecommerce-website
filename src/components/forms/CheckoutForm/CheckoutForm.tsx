@@ -7,13 +7,32 @@ import {
   Wrapper,
   FormLabel,
   RadioGroup,
+  PaymentMethodImage,
+  PaymentMethodText,
+  PaymentMethodWrapper,
 } from './styles';
+import CashOnDeliveryImage from 'assets/images/checkout/icon-cash-on-delivery.svg';
 import { TextInput, RadioButton } from 'components/common';
 import { useState } from 'react';
+
+enum PaymentMethods {
+  E_MONEY = "e-money",
+  CASH_ON_DELIVERY = "cash-on-delivery",
+}
 
 export const CheckoutForm = (): JSX.Element => {
   const [eMoneyActive, setEMoneyActive] = useState(true);
   const [cashOnDeliveryActive, setCashOnDeliveryActive] = useState(false);
+
+  const handlePaymentMethodChange = (paymentMethod: PaymentMethods) => {
+    if (paymentMethod === PaymentMethods.E_MONEY) {
+      setEMoneyActive(true);
+      setCashOnDeliveryActive(false);
+    } else {
+      setCashOnDeliveryActive(true);
+      setEMoneyActive(false);
+    }
+  }
 
   return (
     <Wrapper>
@@ -60,22 +79,31 @@ export const CheckoutForm = (): JSX.Element => {
             <RadioButton 
               checked={eMoneyActive} 
               label="e-Money" 
-              onChange={() => setEMoneyActive(!eMoneyActive)} 
+              onChange={() => handlePaymentMethodChange(PaymentMethods.E_MONEY)} 
             /> 
             <RadioButton 
               checked={cashOnDeliveryActive} 
               label="Cash on Delivery" 
-              onChange={() => setCashOnDeliveryActive(!cashOnDeliveryActive)} 
+              onChange={() => handlePaymentMethodChange(PaymentMethods.CASH_ON_DELIVERY)} 
             /> 
           </RadioGroup>
-          <FormGroup>
-            <FormLabel>e-Money Number</FormLabel>
-            <TextInput placeholder="238521993" />
-          </FormGroup>
-          <FormGroup>
-            <FormLabel>e-Money PIN</FormLabel>
-            <TextInput placeholder="6891" />
-          </FormGroup>
+          {eMoneyActive ? (
+            <>  
+              <FormGroup>
+                <FormLabel>e-Money Number</FormLabel>
+                <TextInput placeholder="238521993" />
+              </FormGroup>
+              <FormGroup>
+                <FormLabel>e-Money PIN</FormLabel>
+                <TextInput placeholder="6891" />
+              </FormGroup>
+            </>
+          ) : (
+            <PaymentMethodWrapper>
+              <PaymentMethodImage src={CashOnDeliveryImage} alt="payment-method-image" />
+              <PaymentMethodText>The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</PaymentMethodText>
+            </PaymentMethodWrapper>
+          )}
         </FormContainer>
       </Stack>
     </Wrapper>
