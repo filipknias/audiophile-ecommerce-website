@@ -29,7 +29,7 @@ export const CartSummary = (): JSX.Element => {
         <Header>Summary</Header>
         <CartItemsWrapper>
           {cart.map((item) => (
-            <CartItem>
+            <CartItem key={item.id}>
               <CartItemGroup>
                 <ItemImage src={`/src/assets/${item.image}`} alt={item.name} />
                 <div>
