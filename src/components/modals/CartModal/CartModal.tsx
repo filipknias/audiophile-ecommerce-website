@@ -21,23 +21,36 @@ import { increaseItemQuantity, decreaseItemQuantity, removeItem, clearCart } fro
 import { useNavigate } from "react-router-dom";
 import { hideModal } from "redux/features/modalSlice";
 import { toast } from "react-toastify";
+import { CartItem as ICartItem } from "types/CartItem";
+import { useLocalStorage } from "hooks/useLocalStorage";
+import { LOCAL_STORAGE_PREFIX } from "data/constants";
 
 export const CartModal = (): JSX.Element => {
   const { cart, total } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const [storedItems, setStoredItems] = useLocalStorage<ICartItem[]>(`${LOCAL_STORAGE_PREFIX}-CART`);
 
   const handleAmountIncrease = (id: number) => {
     dispatch(increaseItemQuantity(id));
+    setStoredItems((cartItems) => cartItems?.map((item) => {
+      if (item.id === id) return { ...item, quantity: item.quantity + 1 };
+      return item;
+    }));
   }
 
-  const handleAmountDecrease = (id: number) => {
-    const cartItem = cart.find((item) => item.id === id);
-    if (!cartItem) return;
-    if (cartItem.quantity > 1) {
+  const handleAmountDecrease = (id: number, quantity: number) => {
+    if (quantity > 1) {
       dispatch(decreaseItemQuantity(id));
+      setStoredItems((cartItems) => cartItems?.map((item) => {
+        if (item.id === id) return { ...item, quantity: item.quantity - 1 };
+        return item;
+      }));
     } else {
       dispatch(removeItem(id));
+      setStoredItems((cartItems) => cartItems?.filter((item) => {
+        return item.id !== id;
+      }));
     }
   }
 
@@ -49,6 +62,7 @@ export const CartModal = (): JSX.Element => {
   const handleClearCart = () => {
     dispatch(clearCart());
     toast.success("Cart is empty");
+    setStoredItems([]);
   }
 
   return (
@@ -73,7 +87,7 @@ export const CartModal = (): JSX.Element => {
                   <div style={{ width: '100px' }}>
                     <AmountInput
                       amount={item.quantity}
-                      onAmountDecrease={() => handleAmountDecrease(item.id)}
+                      onAmountDecrease={() => handleAmountDecrease(item.id, item.quantity)}
                       onAmountIncrease={() => handleAmountIncrease(item.id)}
                     />
                   </div>

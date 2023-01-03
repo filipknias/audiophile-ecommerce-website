@@ -64,7 +64,14 @@ export const ProductView = ({ product }: Props): JSX.Element => {
     toast.success(`Item ${product.name} was added to cart`);
     // Save item in local storage
     if (!storedItems) return;
-    setStoredItems([...storedItems, item]);
+    if (storedItems.find((cartItem) => cartItem.id === product.id)) {
+      setStoredItems((cartItems) => cartItems?.map((item) => {
+        if (item.id === product.id) return { ...item, quantity: item.quantity + amount };
+        return item;
+      }))
+    } else {
+      setStoredItems((cartItems) => cartItems ? [...cartItems, item] : [item]);
+    }
   }
 
   return (
