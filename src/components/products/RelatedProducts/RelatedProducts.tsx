@@ -15,11 +15,11 @@ interface Props {
 export const RelatedProducts = ({ products }: Props): JSX.Element => {
   return (
     <Wrapper>
-      {products.map(({ slug, image, name, category }) => (
+      {products.map(({ slug, image, name }) => (
         <ProductWrapper key={slug}>
           <Image image={image}></Image>
           <Title>{name}</Title>
-          <Link to={`/${category}/${slug}`}>
+          <Link to={`/${slug}`}>
             <OrangeButton>See product</OrangeButton>
           </Link>
         </ProductWrapper>
