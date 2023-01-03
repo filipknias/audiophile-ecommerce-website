@@ -14,6 +14,7 @@ export const theme: DefaultTheme = {
     bold: '700',
   },
   palette: {
+    red: '#CD2C2C',
     orange: '#d87d4a',
     gray: '#f1f1f1',
     light: '#d4d4d4',

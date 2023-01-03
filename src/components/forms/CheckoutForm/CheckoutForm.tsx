@@ -10,6 +10,8 @@ import {
   PaymentMethodImage,
   PaymentMethodText,
   PaymentMethodWrapper,
+  FormErrorMessage,
+  FormLabelWrapper,
 } from './styles';
 import CashOnDeliveryImage from 'assets/images/checkout/icon-cash-on-delivery.svg';
 import { TextInput, RadioButton } from 'components/common';
@@ -23,9 +25,21 @@ const errorMessages = {
   pattern: "Wrong format",
 }
 
+interface FormValues {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  zipCode: string;
+  city: string;
+  country: string;
+  eMoneyNumber?: string;
+  eMoneyPin?: string;
+}
+
 export const CheckoutForm = (): JSX.Element => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<PaymentMethods>(PaymentMethods.E_MONEY);
-  const { register, handleSubmit, formState: { errors } } = useFormContext();
+  const { register, formState: { errors } } = useFormContext<FormValues>();
 
   console.log(errors)
 
@@ -36,16 +50,24 @@ export const CheckoutForm = (): JSX.Element => {
         <FormGroupHeader>Billing details</FormGroupHeader>
         <FormContainer>
           <FormGroup>
-            <FormLabel>Name</FormLabel>
+            <FormLabelWrapper>
+              <FormLabel>Name</FormLabel>
+              {errors.name && errors.name.message && <FormErrorMessage>{errors.name.message}</FormErrorMessage>}
+            </FormLabelWrapper>
             <TextInput 
-              placeholder="Alexei Ward" 
+              placeholder="Alexei Ward"
+              valid={errors.name === undefined} 
               {...register("name", { required: errorMessages.required })} 
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel>Email Address</FormLabel>
-            <TextInput 
+            <FormLabelWrapper>
+              <FormLabel>Email Address</FormLabel>
+              {errors.email && errors.email.message && <FormErrorMessage>{errors.email.message}</FormErrorMessage>}
+            </FormLabelWrapper>
+            <TextInput
               placeholder="alexei@mail.com" 
+              valid={errors.email === undefined} 
               {...register("email", {
                 required: errorMessages.required, 
                 pattern: {
@@ -56,50 +78,80 @@ export const CheckoutForm = (): JSX.Element => {
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel>Phone Number</FormLabel>
+            <FormLabelWrapper>
+              <FormLabel>Phone Number</FormLabel>
+              {errors.phone && errors.phone.message && <FormErrorMessage>{errors.phone.message}</FormErrorMessage>}
+            </FormLabelWrapper>
             <TextInput 
-              placeholder="+1 202-555-0136" 
+              placeholder="+1 202-555-0136"
+              valid={errors.phone === undefined} 
               {...register("phone", {
-                required: errorMessages.required, 
-                valueAsNumber: true,
-            })} 
+                required: errorMessages.required,
+                pattern: {
+                  value: /^\d+$/,
+                  message: errorMessages.pattern,
+                },
+              })} 
             />
           </FormGroup>
         </FormContainer>
         <FormGroupHeader>Shipping info</FormGroupHeader>
         <FormContainer>
           <FormGroup full>
-            <FormLabel>Your Address</FormLabel>
+            <FormLabelWrapper>
+              <FormLabel>Your Address</FormLabel>
+              {errors.address && errors.address.message && <FormErrorMessage>{errors.address.message}</FormErrorMessage>}
+            </FormLabelWrapper>
             <TextInput 
               placeholder="1137 Williams Avenue" 
+              valid={errors.address === undefined}
               {...register("address", { required: errorMessages.required })} 
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel>ZIP Code</FormLabel>
+            <FormLabelWrapper>
+              <FormLabel>ZIP Code</FormLabel>
+              {errors.zipCode && errors.zipCode.message && <FormErrorMessage>{errors.zipCode.message}</FormErrorMessage>}
+            </FormLabelWrapper>
             <TextInput 
-              placeholder="10001" 
+              placeholder="10001"
+              valid={errors.zipCode === undefined}
               {...register("zipCode", {
-                required: errorMessages.required, 
-                valueAsNumber: true,
+                required: errorMessages.required,
                 pattern: {
-                  value: /^\d{5}$/,
-                  message: errorMessages.pattern
-                } 
+                  value: /^\d+$/,
+                  message: errorMessages.pattern,
+                },
+                minLength: {
+                  value: 5,
+                  message: errorMessages.pattern,
+                },
+                maxLength: {
+                  value: 5,
+                  message: errorMessages.pattern,
+                }, 
               })} 
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel>City</FormLabel>
+            <FormLabelWrapper>
+              <FormLabel>City</FormLabel>
+              {errors.city && errors.city.message && <FormErrorMessage>{errors.city.message}</FormErrorMessage>}
+            </FormLabelWrapper>
             <TextInput 
-              placeholder="New York" 
+              placeholder="New York"
+              valid={errors.city === undefined} 
               {...register("city", { required: errorMessages.required })} 
             />
           </FormGroup>
           <FormGroup>
-            <FormLabel>Country</FormLabel>
+            <FormLabelWrapper>
+              <FormLabel>Country</FormLabel>
+              {errors.country && errors.country.message && <FormErrorMessage>{errors.country.message}</FormErrorMessage>}
+            </FormLabelWrapper>
             <TextInput 
-              placeholder="United States" 
+              placeholder="United States"
+              valid={errors.country === undefined}
               {...register("country", { required: errorMessages.required })} 
             />
           </FormGroup>
@@ -122,30 +174,52 @@ export const CheckoutForm = (): JSX.Element => {
           {selectedPaymentMethod === PaymentMethods.E_MONEY ? (
             <>  
               <FormGroup>
-                <FormLabel>e-Money Number</FormLabel>
+                <FormLabelWrapper>
+                  <FormLabel>e-Money Number</FormLabel>
+                  {errors.eMoneyNumber && errors.eMoneyNumber.message && <FormErrorMessage>{errors.eMoneyNumber.message}</FormErrorMessage>}
+                </FormLabelWrapper>
                 <TextInput
-                  placeholder="238521993" 
+                  placeholder="238521993"
+                  valid={errors.eMoneyNumber === undefined}
                   {...register("eMoneyNumber", {
-                    required: errorMessages.required, 
-                    valueAsNumber: true, 
+                    required: errorMessages.required,
                     pattern: {
-                      value: /^\d{9}$/ ,
+                      value: /^\d+$/,
                       message: errorMessages.pattern,
-                    }
+                    },
+                    minLength: {
+                      value: 9,
+                      message: errorMessages.pattern,
+                    },
+                    maxLength: {
+                      value: 9,
+                      message: errorMessages.pattern,
+                    }, 
                   })}
                 />
               </FormGroup>
               <FormGroup>
-                <FormLabel>e-Money PIN</FormLabel>
+                <FormLabelWrapper>
+                  <FormLabel>e-Money PIN</FormLabel>
+                  {errors.eMoneyPin && errors.eMoneyPin.message && <FormErrorMessage>{errors.eMoneyPin.message}</FormErrorMessage>}
+                </FormLabelWrapper>
                 <TextInput
                   placeholder="6891"
+                  valid={errors.eMoneyPin === undefined}
                   {...register("eMoneyPin", {
-                    required: errorMessages.required, 
-                    valueAsNumber: true, 
+                    required: errorMessages.required,
                     pattern: {
-                      value: /^\d{4}$/,
+                      value: /^\d+$/,
                       message: errorMessages.pattern,
-                    } 
+                    },
+                    minLength: {
+                      value: 4,
+                      message: errorMessages.pattern,
+                    },
+                    maxLength: {
+                      value: 4,
+                      message: errorMessages.pattern,
+                    },  
                   })}
                 />
               </FormGroup>

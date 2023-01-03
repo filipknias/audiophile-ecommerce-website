@@ -15,6 +15,7 @@ declare module 'styled-components' {
       bold: string;
     },
     palette: {
+      red: string;
       orange: string;
       gray: string;
       light: string;

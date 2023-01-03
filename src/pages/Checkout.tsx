@@ -2,7 +2,7 @@ import { Container } from "components/common";
 import styled from "styled-components";
 import { CheckoutForm } from "components/forms";
 import { CartSummary } from "components/app";
-import { useForm, FormProvider, useFormContext } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 
 const GoBackLabel = styled.span`
   color: ${({ theme }) => theme.text.dark};

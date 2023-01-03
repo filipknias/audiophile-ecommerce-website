@@ -92,3 +92,15 @@ export const PaymentMethodText = styled.p`
   font-weight: ${({ theme }) => theme.fonts.normal};
   line-height: 1.6;
 `;
+
+export const FormLabelWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const FormErrorMessage = styled.span`
+  color: ${({ theme }) => theme.palette.red};
+  font-size: 0.9rem;
+  font-weight: ${({ theme }) => theme.fonts.normal};
+`;
