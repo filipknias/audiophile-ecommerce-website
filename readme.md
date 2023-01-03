@@ -12,6 +12,9 @@ You can visit website here:
 `npm install && npm run dev`
 # Screenshots
 ![screenshot_1](screenshots/screenshot1.png)
+<br />
 ![screenshot_2](screenshots/screenshot2.png)
+<br />
 ![screenshot_3](screenshots/screenshot3.png)
+<br />
 ![screenshot_4](screenshots/screenshot4.png)
