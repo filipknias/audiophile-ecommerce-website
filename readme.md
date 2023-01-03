@@ -8,7 +8,8 @@ You can visit website here:
 - Redux
 - Styled components
 # Installation
-`git clone https://github.com/filipknias/audiophile-ecommerce-website.git`\n
+`git clone https://github.com/filipknias/audiophile-ecommerce-website.git`
+<br />
 `npm install && npm run dev`
 # Screenshots
 ![screenshot_1](screenshots/screenshot1.png)
