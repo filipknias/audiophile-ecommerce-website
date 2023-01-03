@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { CheckoutForm } from "components/forms";
 import { CartSummary } from "components/app";
 import { useForm, FormProvider } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const GoBackLabel = styled.span`
   color: ${({ theme }) => theme.text.dark};
@@ -28,12 +29,13 @@ const Wrapper = styled.div`
 export const Checkout = (): JSX.Element => {
   const methods = useForm();
   const onSubmit = (data: any) => console.log(data);
+  const navigate = useNavigate();
 
   return (
     <FormProvider {...methods} >
       <form onSubmit={methods.handleSubmit(onSubmit)}>
         <Container>
-          <GoBackLabel>Go Back</GoBackLabel>
+          <GoBackLabel onClick={() => navigate(-1)}>Go Back</GoBackLabel>
           <Wrapper>
             <div style={{ flex: 1 }}>
               <CheckoutForm />
