@@ -20,6 +20,9 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "redux/hooks";
 import { addItem } from "redux/features/cartSlice";
 import { toast } from 'react-toastify';
+import { CartItem } from "types/CartItem";
+import { useLocalStorage } from "hooks/useLocalStorage";
+import { LOCAL_STORAGE_PREFIX } from "data/constants";
 
 interface Props {
   product: Product;
@@ -29,6 +32,7 @@ export const ProductView = ({ product }: Props): JSX.Element => {
   const [amount, setAmount] = useState(1);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const [storedItems, setStoredItems] = useLocalStorage<CartItem[]>(`${LOCAL_STORAGE_PREFIX}-CART`);
 
   const handleAmountIncrease = () => {
     setAmount((prevAmount) => prevAmount + 1);
@@ -46,15 +50,21 @@ export const ProductView = ({ product }: Props): JSX.Element => {
   }));
 
   const handleAddItem = () => {
-    dispatch(addItem({
+    const item = {
       id: product.id,
       image: product.cartImage,
       name: product.name,
       price: product.price,
       quantity: amount,
       slug: product.slug,
-    }));
+    };
+    // Add item to cart state
+    dispatch(addItem(item));
+    // Display notification
     toast.success(`Item ${product.name} was added to cart`);
+    // Save item in local storage
+    if (!storedItems) return;
+    setStoredItems([...storedItems, item]);
   }
 
   return (

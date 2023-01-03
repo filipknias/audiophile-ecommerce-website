@@ -2,16 +2,33 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { Navbar, Footer } from "components/app";
 import { Home, Category, Product, Checkout } from "pages";
 import { ToastContainer } from 'react-toastify';
-import { useAppSelector } from "redux/hooks";
-import { useEffect } from "react";
+import { useAppSelector, useAppDispatch } from "redux/hooks";
+import { useEffect, useState } from "react";
+import { useLocalStorage } from "hooks/useLocalStorage";
+import { CartItem } from "types/CartItem";
+import { LOCAL_STORAGE_PREFIX } from "data/constants"; 
+import { addItem } from "redux/features/cartSlice";
 
 export default (): JSX.Element => {
   const { activeModal } = useAppSelector((state) => state.modal);
   const { pathname } = useLocation();
+  const [storedItems, setStoredItems] = useLocalStorage<CartItem[]>(`${LOCAL_STORAGE_PREFIX}-CART`);
+  const dispatch = useAppDispatch();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    setMounted(true);
+    if (mounted) {
+      if (!storedItems) return;
+      storedItems.forEach((cartItem) => {
+        dispatch(addItem(cartItem));
+      });
+    }
+  }, [mounted]);
 
   return (
     <>

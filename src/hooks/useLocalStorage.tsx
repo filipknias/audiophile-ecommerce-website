@@ -12,7 +12,6 @@ export const useLocalStorage = <T,>(key: string, initialValue?: T): ReturnType<T
     return value ? JSON.parse(value) : undefined;
   });
 
-  console.log(storedValue);
   useEffect(() => {
     if (!storedValue) return;
     localStorage.setItem(key, JSON.stringify(storedValue));

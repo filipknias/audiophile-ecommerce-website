@@ -5,3 +5,5 @@ export enum PaymentMethods {
   E_MONEY = "e-money",
   CASH_ON_DELIVERY = "cash-on-delivery",
 }
+
+export const LOCAL_STORAGE_PREFIX = "AUDIOPHILE";
