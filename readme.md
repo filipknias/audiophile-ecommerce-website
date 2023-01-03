@@ -10,12 +10,16 @@ You can visit website here:
 # Installation
 `git clone https://github.com/filipknias/audiophile-ecommerce-website.git`
 <br />
+<br />
 `npm install && npm run dev`
 # Screenshots
 ![screenshot_1](screenshots/screenshot1.png)
 <br />
+<br />
 ![screenshot_2](screenshots/screenshot2.png)
 <br />
+<br />
 ![screenshot_3](screenshots/screenshot3.png)
+<br />
 <br />
 ![screenshot_4](screenshots/screenshot4.png)
