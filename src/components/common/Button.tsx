@@ -15,6 +15,11 @@ const Button = styled.button<ButtonProps>`
   cursor: pointer;
   transition: ${({ theme }) => theme.transitions.fast} ease-in;
   border: none;
+  &:disabled {
+    filter: opacity(0.5);
+    cursor: default;
+    pointer-events: none;
+  }
 `;
 
 export const OrangeButton = styled(Button)`
