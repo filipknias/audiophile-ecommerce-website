@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useClickOutside } from "hooks/useClickOutside";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useAppDispatch } from "redux/hooks";
 import { hideModal } from "redux/features/modalSlice";
 
@@ -40,8 +40,13 @@ export const Modal = ({ children }: Props): JSX.Element => {
   const modalRef = useRef<HTMLDivElement|null>(null);
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+  }, []);
+
   useClickOutside(modalRef, () => {
     dispatch(hideModal());
+    document.body.style.overflow = 'scroll';
   });
 
   return (
