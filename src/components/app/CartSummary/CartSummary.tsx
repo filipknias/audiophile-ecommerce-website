@@ -64,7 +64,13 @@ export const CartSummary = ({ onSubmit }: Props): JSX.Element => {
             <ListItemTextOrange>${grandTotal.toFixed(1)}</ListItemTextOrange>
           </ListItem>
         </List>
-        <OrangeButton full onClick={onSubmit}>Continue & Pay</OrangeButton>
+        <OrangeButton 
+          full 
+          onClick={onSubmit} 
+          disabled={cart.length === 0}
+        >
+          Continue & Pay
+        </OrangeButton>
       </Stack>
     </Wrapper>
   )
