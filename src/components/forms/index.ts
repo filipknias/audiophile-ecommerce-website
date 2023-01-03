@@ -1,0 +1,1 @@
+export { CheckoutForm } from 'components/forms/CheckoutForm/CheckoutForm';
