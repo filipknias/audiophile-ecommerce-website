@@ -4,6 +4,10 @@ import { CheckoutForm } from "components/forms";
 import { CartSummary } from "components/app";
 import { useForm, FormProvider } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { FormValues } from 'components/forms/CheckoutForm/types';
+import { useAppDispatch } from "redux/hooks";
+import { OrderModal } from "components/modals";
+import { openModal } from "redux/features/modalSlice";
 
 const GoBackLabel = styled.span`
   color: ${({ theme }) => theme.text.dark};
@@ -27,9 +31,13 @@ const Wrapper = styled.div`
 `;
 
 export const Checkout = (): JSX.Element => {
-  const methods = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const methods = useForm<FormValues>();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const onSubmit = (data: FormValues) => {
+    dispatch(openModal(<OrderModal />));
+  }
 
   return (
     <FormProvider {...methods} >
