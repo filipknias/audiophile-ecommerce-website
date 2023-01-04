@@ -26,15 +26,15 @@ export const GoBackLabel = styled.a`
 export const ProductImage = styled.div<ImageProps>`
   border-radius: ${({ theme }) => theme.borderRadius};
   flex: 1;
-  background-image: url(${({ image }) => "/src/assets/" + image.desktop});
+  background-image: url(${({ image }) => "/assets/" + image.desktop});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: left;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.tablet});
+    background-image: url(${({ image }) => "/assets/" + image.tablet});
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.mobile});
+    background-image: url(${({ image }) => "/assets/" + image.mobile});
     margin-bottom: 2rem;
     background-position: center;
   }
