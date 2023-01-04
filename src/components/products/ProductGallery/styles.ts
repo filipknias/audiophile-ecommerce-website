@@ -30,38 +30,38 @@ export const GalleryImage = styled.div`
 `;
 
 export const FirstImage = styled(GalleryImage)<ImageProps>`
-  background-image: url(${({ image }) => "/src/assets/" + image.desktop});
+  background-image: url(${({ image }) => "/assets/" + image.desktop});
   grid-column-start: 1;
   grid-row-start: 1;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.tablet});
+    background-image: url(${({ image }) => "/assets/" + image.tablet});
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.mobile});
+    background-image: url(${({ image }) => "/assets/" + image.mobile});
   }
 `;
 
 export const SecondImage = styled(GalleryImage)<ImageProps>`
-  background-image: url(${({ image }) => "/src/assets/" + image.desktop});
+  background-image: url(${({ image }) => "/assets/" + image.desktop});
   grid-column-start: 1;
   grid-row-start: 2;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.tablet});
+    background-image: url(${({ image }) => "/assets/" + image.tablet});
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.mobile});
+    background-image: url(${({ image }) => "/assets/" + image.mobile});
   }
 `;
 
 export const ThirdImage = styled(GalleryImage)<ImageProps>`
-  background-image: url(${({ image }) => "/src/assets/" + image.desktop});
+  background-image: url(${({ image }) => "/assets/" + image.desktop});
   grid-column-start: 2;
   grid-row-start: 1;
   grid-row-end: 3;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.tablet});
+    background-image: url(${({ image }) => "/assets/" + image.tablet});
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.mobile});
+    background-image: url(${({ image }) => "/assets/" + image.mobile});
   }
 `;

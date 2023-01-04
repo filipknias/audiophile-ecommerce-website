@@ -1,6 +1,6 @@
-import HeadphonesImage from 'assets/images/shared/desktop/image-headphones.png';
-import SpeakersImage from 'assets/images/shared/desktop/image-speakers.png';
-import EarphonesImage from 'assets/images/shared/desktop/image-earphones.png';
+import HeadphonesImage from '/assets/images/shared/desktop/image-headphones.png';
+import SpeakersImage from '/assets/images/shared/desktop/image-speakers.png';
+import EarphonesImage from '/assets/images/shared/desktop/image-earphones.png';
 import { CategoryCard } from 'components/products';
 import { Wrapper } from './styles';
 

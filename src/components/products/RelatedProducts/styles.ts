@@ -24,16 +24,16 @@ export const ProductWrapper = styled.div`
 export const Image = styled.div<ImageProps>`
   width: 100%;
   height: 300px;
-  background-image: url(${({ image }) => "/src/assets/" + image.desktop});
+  background-image: url(${({ image }) => "/assets/" + image.desktop});
   border-radius: ${({ theme }) => theme.borderRadius};
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.tablet});
+    background-image: url(${({ image }) => "/assets/" + image.tablet});
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    background-image: url(${({ image }) => "/src/assets/" + image.mobile});
+    background-image: url(${({ image }) => "/assets/" + image.mobile});
     height: 200px;
     background-size: contain;
   }

@@ -36,7 +36,7 @@ export const CartSummary = ({ onSubmit }: Props): JSX.Element => {
           {cart.map((item) => (
             <CartItem key={item.id}>
               <CartItemGroup>
-                <ItemImage src={`/src/assets/${item.image}`} alt={item.name} />
+                <ItemImage src={`/assets/${item.image}`} alt={item.name} />
                 <div>
                   <ItemName>{item.name}</ItemName>
                   <ItemPrice>${item.price}</ItemPrice>

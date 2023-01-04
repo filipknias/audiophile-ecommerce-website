@@ -1,5 +1,5 @@
 import { Card, Image, CardLink, Title, LinkGroup } from './styles';
-import ArrowRight from 'assets/images/shared/desktop/icon-arrow-right.svg';
+import ArrowRight from '/assets/images/shared/desktop/icon-arrow-right.svg';
 import { Link } from 'react-router-dom';
 
 interface Props {

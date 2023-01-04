@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: url('/src/assets/images/home/desktop/image-speaker-zx7.jpg') no-repeat;
+  background: url('/assets/images/home/desktop/image-speaker-zx7.jpg') no-repeat;
   background-size: cover; 
   background-position: bottom;
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -9,10 +9,10 @@ export const Wrapper = styled.div`
   height: 300px;
   color: ${({ theme }) => theme.text.black};
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url('/src/assets/images/home/tablet/image-speaker-zx7.jpg');
+    background-image: url('/assets/images/home/tablet/image-speaker-zx7.jpg');
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    background-image: url('/src/assets/images/home/mobile/image-speaker-zx7.jpg');
+    background-image: url('/assets/images/home/mobile/image-speaker-zx7.jpg');
   }
 `;
 

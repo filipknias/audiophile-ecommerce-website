@@ -1,4 +1,4 @@
-import CartImage from 'assets/images/shared/desktop/icon-cart.svg';
+import CartImage from '/assets/images/shared/desktop/icon-cart.svg';
 import { Wrapper, Cart, AmountDisplay } from './styles';
 import { useAppSelector, useAppDispatch } from 'redux/hooks';
 import { openModal } from 'redux/features/modalSlice';

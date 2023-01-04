@@ -15,7 +15,7 @@ import { useFormContext } from "react-hook-form";
 import { FormValues, errorMessages } from "./types";
 import { useState } from "react";
 import { PaymentMethods } from "data/constants";
-import CashOnDeliveryImage from 'assets/images/checkout/icon-cash-on-delivery.svg';
+import CashOnDeliveryImage from '/assets/images/checkout/icon-cash-on-delivery.svg';
 
 export const PaymentDetails = (): JSX.Element => {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<PaymentMethods>(PaymentMethods.E_MONEY);

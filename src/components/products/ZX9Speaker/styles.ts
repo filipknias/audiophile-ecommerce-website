@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: url('/src/assets/images/home/desktop/pattern-circles.svg') no-repeat;
+  background: url('/assets/images/home/desktop/pattern-circles.svg') no-repeat;
   background-color: ${({ theme }) => theme.palette.orange};
   display: flex;
   height: 600px;

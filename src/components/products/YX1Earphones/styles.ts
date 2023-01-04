@@ -10,17 +10,17 @@ export const Wrapper = styled.div`
 `;
 
 export const ImagePlacement = styled.div`
-  background: url('/src/assets/images/home/desktop/image-earphones-yx1.jpg') no-repeat;
+  background: url('/assets/images/home/desktop/image-earphones-yx1.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   border-top-left-radius: ${({ theme }) => theme.borderRadius};
   border-bottom-left-radius: ${({ theme }) => theme.borderRadius};
   flex: 1;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url('/src/assets/images/home/tablet/image-earphones-yx1.jpg');
+    background-image: url('/assets/images/home/tablet/image-earphones-yx1.jpg');
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    background-image: url('/src/assets/images/home/mobile/image-earphones-yx1.jpg')
+    background-image: url('/assets/images/home/mobile/image-earphones-yx1.jpg')
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.xs}) {
     border-top-right-radius: ${({ theme }) => theme.borderRadius};

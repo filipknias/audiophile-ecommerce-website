@@ -1,5 +1,5 @@
 import { Wrapper, Title, Image, Description, Content } from './styles';
-import SpeakerImage from 'assets/images/home/desktop/image-speaker-zx9.png';
+import SpeakerImage from '/assets/images/home/desktop/image-speaker-zx9.png';
 import { BlackButton } from 'components/common';
 import { Link } from 'react-router-dom';
 

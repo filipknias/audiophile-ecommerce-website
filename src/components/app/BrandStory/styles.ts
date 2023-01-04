@@ -54,14 +54,14 @@ export const Description = styled.p`
 export const ImageContainer = styled.div`
   flex: 1; 
   border-radius: ${({ theme }) => theme.borderRadius};
-  background: url('/src/assets/images/shared/desktop/image-best-gear.jpg') no-repeat;
+  background: url('/assets/images/shared/desktop/image-best-gear.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url('/src/assets/images/shared/tablet/image-best-gear.jpg');
+    background-image: url('/assets/images/shared/tablet/image-best-gear.jpg');
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    background-image: url('/src/assets/images/shared/mobile/image-best-gear.jpg');
+    background-image: url('/assets/images/shared/mobile/image-best-gear.jpg');
 
   }
 `;
