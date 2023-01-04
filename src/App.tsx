@@ -30,6 +30,14 @@ export default (): JSX.Element => {
     }
   }, [mounted]);
 
+  useEffect(() => {
+    if (activeModal) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = 'scroll';
+    }
+  }, [activeModal]);
+
   return (
     <>
       <Navbar />
