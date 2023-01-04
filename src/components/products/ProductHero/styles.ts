@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 
 export const HeroImage = styled.div`
   border-top: 2px solid rgba(255,255,255,0.1);
-  background-image: url('/src/assets/images/home/desktop/image-hero.jpg');
+  background-image: url('/assets/images/home/desktop/image-hero.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,10 +20,10 @@ export const HeroImage = styled.div`
   gap: 20px;
   animation: fadeIn ${fadeInDelay} ease-in;
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    background-image: url('/src/assets/images/home/tablet/image-hero.jpg');
+    background-image: url('/assets/images/home/tablet/image-hero.jpg');
   }
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
-    background-image: url('/src/assets/images/home/mobile/image-hero.jpg');
+    background-image: url('/assets/images/home/mobile/image-hero.jpg');
   }
 
   @keyframes fadeIn {
