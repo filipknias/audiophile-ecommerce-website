@@ -3,6 +3,7 @@ import { Modal, OrangeButton } from "components/common";
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from 'redux/hooks';
 import { hideModal } from 'redux/features/modalSlice';
+import { clearCart } from 'redux/features/cartSlice';
 
 export const OrderModal = (): JSX.Element => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ export const OrderModal = (): JSX.Element => {
   const handleButtonClick = () => {
     navigate("/");
     dispatch(hideModal());
+    dispatch(clearCart());
   };
 
   return (
