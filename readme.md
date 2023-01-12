@@ -1,7 +1,7 @@
 # Audiophile E-commerce Website
 Audiophile is online shop where you can buy headphones, speakers and earphones. Website is fully functional store where you can browse products from different categories, add product to cart and fill in checkout form. Website design is fully responsive and contains nice animations. 
 # Live preview
-You can visit website here: 
+You can visit website here: https://audiophile-shop-c4aec8.netlify.app
 # Tech stack
 - Typescript
 - React
